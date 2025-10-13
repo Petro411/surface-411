@@ -1,9 +1,8 @@
-import Label from "@/config/Label";
-import { withAuth } from "@/lib/middlewares/withAuth";
+import { withMethod } from "@/lib/middlewares/withMethod";
 import { withCors } from "@/lib/middlewares/withCors";
-import { withMethod } from "@/lib/middlewares/withMethod"
-import { dbConnect } from "@/lib/mongodb/dbConnect";
+import { withAuth } from "@/lib/middlewares/withAuth";
 import Contact from "@/lib/mongodb/models/Contact";
+
 
 async function handler(req: any, res: any) {
  try {

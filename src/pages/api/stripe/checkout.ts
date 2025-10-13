@@ -1,9 +1,7 @@
 import { withMethod } from "@/lib/middlewares/withMethod";
-import { HttpException } from "@/utils/HttpException";
 import { dbConnect } from "@/lib/mongodb/dbConnect";
 import User from "@/lib/mongodb/models/User";
 import { NextApiResponse } from "next";
-import Label from "@/config/Label";
 import JWT from "jsonwebtoken";
 import Stripe from "stripe";
 
