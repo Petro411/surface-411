@@ -5,7 +5,7 @@ import Digg411 from "./digg411";
 import Row411 from "./row411";
 
 
-const BRAND: any = "pipeline"; // can be from env
+const BRAND: any = "surface"; // can be from env
 
 let BrandConfig: any;
 
