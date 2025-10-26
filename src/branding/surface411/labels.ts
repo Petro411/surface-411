@@ -1,15 +1,15 @@
 export default {
 
-    SiteName: "Petro411",
-    SiteDomain: "petro411.com.",
+    SiteName: "Surface411",
+    SiteDomain: "surface411.com.",
 
-    CopyRight: "Copyright © 2025 petro411.com. All rights reserved.",
+    CopyRight: "Copyright © 2025 surface411.com. All rights reserved.",
 
     // Home Page 
     YourMineralOwners: "Surface Owner Contact HUB",
     SimplifiesLandAcquisition: "Surface 411 simplifies the land acquisition process by providing accurate, secure contact information for surface owners nationwide – built by industry experts for the land acquisition community.",
-    SearchMineralOwners: "Search Surface Owners by State",
-    FindMineralOwners: "Explore surface ownership across the U.S. with Surface411.  Select any state to instantly access detailed surface owner information, including property data and ownership records.  Whether you’re researching opportunities or verifying ownership, Surface411 makes it simple to navigate state and county specific mineral data in just one click.",
+    SearchMineralOwners: "Search mineral owners",
+    FindMineralOwners: "Find mineral owners fast with accurate contact details to support your land projects.",
 
     // Auth Pages 
     Login: "Login",
@@ -63,13 +63,13 @@ export default {
 
 
     MineralOwnersByState: "Mineral Owners by State",
-    ExploreMineralOwnership: "Explore mineral ownership across the U.S. with Petro411. Select any state to instantly access detailed mineral owner information, including property data and ownership records. Whether you’re researching opportunities or verifying ownership, Petro411 makes it simple to navigate state-specific mineral data in just one click.",
+    ExploreMineralOwnership: "Explore surface ownership across the U.S. with Surface411.  Select any state to instantly access detailed surface owner information, including property data and ownership records.  Whether you’re researching opportunities or verifying ownership, Surface411 makes it simple to navigate state and county specific mineral data in just one click.",
 
     OurCompany: "Our Company",
     TeamHasTheRequired: "Surface411’s team has the required land experience to successfully execute and deliver a quality surface owner database.  With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land planning, land development and government.",
 
     HowItWorks: "How it works?",
-    HowItWorksDes: "Petro411, LLC is the first mineral owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
+    HowItWorksDes: "Surface411, LLC is the first mineral owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
 
     HowItWorksCards: [
         "Search individual or company surface owners based on County & State Query (Map Search Option Available)",
@@ -114,8 +114,8 @@ export default {
         },
     ],
 
-    WithBrandName: "With Petro411",
-    WithBrandDes: "Quickly find mineral owners and property details—just enter your criteria and get results instantly with Petro411.",
+    WithBrandName: "With Surface411",
+    WithBrandDes: "Quickly find mineral owners and property details—just enter your criteria and get results instantly with Surface411.",
     FindTheMineralData: "Find the mineral data you need—faster and smarter.",
 
     StayInLoop: "Stay in the Loop",
@@ -164,6 +164,44 @@ export default {
 
 WhatDrivesUsDesc:'Core principles that shape our platform and your experience',
 
-SubscriptionPageDesc:"Choose the plan that best fits your needs.  Surface411 offers flexible pricing with access to accurate mineral owner data to streamline your land acquisition process."
-
+SubscriptionPageDesc:"Choose the plan that best fits your needs.  Surface411 offers flexible pricing with access to accurate mineral owner data to streamline your land acquisition process.",
+ContactUs:"Contact Us",
+ContactUsDesc:"If you have any questions or concerns, please contact us using the form below.",
+  ServiceCards: [
+    {
+      title: "Verified Surface Ownership Data",
+      subtitle: "Accurate & Up-to-Date",
+      description:
+        "We provide reliable and regularly updated information on mineral owners, ensuring your research is always backed by trustworthy data.",
+      image: "/assets/images/list.png",
+    },
+    {
+      title: "Easy Subscription Access",
+      subtitle: "Flexible Plans",
+      description:
+        "Access all data instantly with our easy-to-use subscription plans designed for individuals, researchers, and companies alike.",
+      image: "/assets/images/price-tag.png",
+    },
+    {
+      title: "Downloadable Spreadsheets",
+      subtitle: "Export Anytime",
+      description:
+        "Need data offline? Easily download ownership reports and datasets in multiple formats for your convenience.",
+      image: "/assets/images/down-arrow.png",
+    },
+    {
+      title: "Advanced Search Filters",
+      subtitle: "Find Exactly What You Need",
+      description:
+        "Use our smart search tools to quickly locate mineral owners, locations, and specific data with ease.",
+      image: "/assets/images/search.png",
+    },
+    {
+      title: "Secure & Private",
+      subtitle: "Your Data is Safe",
+      description:
+        "We prioritize security and privacy, ensuring your account and searches are always protected.",
+      image: "/assets/images/lock.png",
+    },
+  ]
 }

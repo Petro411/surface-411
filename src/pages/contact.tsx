@@ -11,6 +11,7 @@ import Faqs from "@/components/home/Faqs";
 import Footer from "@/components/Footer";
 import toast from "react-simple-toasts";
 import { GetStaticProps } from "next";
+import { label } from "@/branding";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -19,8 +20,6 @@ const ContactPage = () => {
   const [faqs, setFaqs] = useState([]);
 
   const getFaqsApi = useQuery(endpoints.getFaqs);
-
-  console.log(getFaqsApi.data);
 
   const { request, loading } = useMutation(endpoints.contact);
 
@@ -70,8 +69,8 @@ const ContactPage = () => {
       </Head>
       <SiteHeader />
       <PageHeader
-        title="Contact Us"
-        description="If you have any questions or concerns, please contact us using the form below."
+        title={label.ContactUs}
+        description={label.ContactUsDesc}
         className="!min-h-[40vh]"
         containerClassname="!min-h-[40vh]"
       />

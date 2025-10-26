@@ -49,73 +49,6 @@ export const statesList = [
   "Wisconsin",
 ];
 
-export const faqs = [
-  {
-    question: "What is your return policy?",
-    answer:
-      "We accept returns within 30 days of purchase. Please ensure the product is unused and in its original packaging.",
-  },
-  {
-    question: "Do you offer international shipping?",
-    answer:
-      "Yes, we ship to most countries worldwide. Shipping fees and delivery times may vary based on your location.",
-  },
-  {
-    question: "How can I track my order?",
-    answer:
-      "Once your order is shipped, you’ll receive an email with a tracking number and link to follow your package.",
-  },
-  {
-    question: "Can I change or cancel my order?",
-    answer:
-      "You can modify or cancel your order within 24 hours of placement by contacting our support team.",
-  },
-  {
-    question: "Do you offer customer support?",
-    answer:
-      "Absolutely! Our support team is available 24/7 via live chat, email, and phone to assist you with any questions.",
-  },
-];
-
-
-export const serviceCards = [
-  {
-    title: "Verified Mineral Ownership Data",
-    subtitle: "Accurate & Up-to-Date",
-    description:
-      "We provide reliable and regularly updated information on mineral owners, ensuring your research is always backed by trustworthy data.",
-    image: "/assets/images/list.png",
-  },
-  {
-    title: "Easy Subscription Access",
-    subtitle: "Flexible Plans",
-    description:
-      "Access all data instantly with our easy-to-use subscription plans designed for individuals, researchers, and companies alike.",
-    image: "/assets/images/price-tag.png",
-  },
-  {
-    title: "Downloadable Spreadsheets",
-    subtitle: "Export Anytime",
-    description:
-      "Need data offline? Easily download ownership reports and datasets in multiple formats for your convenience.",
-    image: "/assets/images/down-arrow.png",
-  },
-  {
-    title: "Advanced Search Filters",
-    subtitle: "Find Exactly What You Need",
-    description:
-      "Use our smart search tools to quickly locate mineral owners, locations, and specific data with ease.",
-    image: "/assets/images/search.png",
-  },
-  {
-    title: "Secure & Private",
-    subtitle: "Your Data is Safe",
-    description:
-      "We prioritize security and privacy, ensuring your account and searches are always protected.",
-    image: "/assets/images/lock.png",
-  },
-];
-
 export const demoPrivacy = `
 <p>
   At <strong>Petro411</strong>, we are committed to protecting your personal
@@ -223,21 +156,6 @@ export const demoTerms = `<p>Welcome to Petro411. By accessing or using our webs
 
   <h2>11. Contact Us</h2>
   <p>If you have any questions or concerns regarding these Terms of Use, please contact us at <a href="mailto:support@petro411.com">support@petro411.com</a>.</p>`
-
-
-  export const cityStatesList =[
-    "Phoenix, Texas",
-    "Anchorage, Florida",
-    "Little Rock, California",
-    "Birmingham, New York",
-    "Fairbanks, Nevada",
-    "Tucson, Ohio",
-    "Juneau, Illinois",
-    "Montgomery, Georgia",
-    "Mobile, Washington",
-    "Mesa, Oregon"
-  ];
-
 
 
 export const US_STATES: Record<string, string> = {

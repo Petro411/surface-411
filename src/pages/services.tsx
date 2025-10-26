@@ -7,7 +7,6 @@ import PageHeader from "@/components/PageHeader";
 import NewsLetter from "@/components/NewsLetter";
 import Container from "@/components/Container";
 import Card from "@/components/services/Card";
-import { serviceCards } from "@/config/dummy";
 import Faqs from "@/components/home/Faqs";
 import Footer from "@/components/Footer";
 import { Flex } from "@radix-ui/themes";
@@ -36,7 +35,7 @@ const Services = ({ faqs, locations }: Props) => {
       <Flex direction={"column"} gap={"9"}>
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-20">
-            {serviceCards.map((item, index) => (
+            {label.ServiceCards.map((item:any, index:number) => (
               <Card key={index} {...item} />
             ))}
           </div>
