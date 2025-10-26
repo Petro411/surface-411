@@ -6,10 +6,10 @@ export default {
     CopyRight: "Copyright © 2025 petro411.com. All rights reserved.",
 
     // Home Page 
-    YourMineralOwners: "Mineral Owner Contact HUB",
-    SimplifiesLandAcquisition: "Petro411 simplifies land acquisition by providing accurate, secure contact information for mineral owners nationwide — built by industry experts for the oil and gas community.",
-    SearchMineralOwners: "Search mineral owners",
-    FindMineralOwners: "Find mineral owners fast with accurate contact details to support your land projects.",
+    YourMineralOwners: "Surface Owner Contact HUB",
+    SimplifiesLandAcquisition: "Surface 411 simplifies the land acquisition process by providing accurate, secure contact information for surface owners nationwide – built by industry experts for the land acquisition community.",
+    SearchMineralOwners: "Search Surface Owners by State",
+    FindMineralOwners: "Explore surface ownership across the U.S. with Surface411.  Select any state to instantly access detailed surface owner information, including property data and ownership records.  Whether you’re researching opportunities or verifying ownership, Surface411 makes it simple to navigate state and county specific mineral data in just one click.",
 
     // Auth Pages 
     Login: "Login",
@@ -66,26 +66,26 @@ export default {
     ExploreMineralOwnership: "Explore mineral ownership across the U.S. with Petro411. Select any state to instantly access detailed mineral owner information, including property data and ownership records. Whether you’re researching opportunities or verifying ownership, Petro411 makes it simple to navigate state-specific mineral data in just one click.",
 
     OurCompany: "Our Company",
-    TeamHasTheRequired: "Petro411’s team has the required oil and gas and land experience to successfully execute and deliver a quality mineral owner database. With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land development and government.",
+    TeamHasTheRequired: "Surface411’s team has the required land experience to successfully execute and deliver a quality surface owner database.  With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land planning, land development and government.",
 
     HowItWorks: "How it works?",
     HowItWorksDes: "Petro411, LLC is the first mineral owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
 
     HowItWorksCards: [
-        "Search individual or company mineral owners based on County & State Query (Map Search Option available)",
-        "Download an entire County mineral owner listing - Each mineral owner listing will include name (Individual or Company), email (s), phone number (s), address, county, state and a short legal description.",
-        "Download multiple Counties mineral owner listings",
-        "Free searches without phone numbers and email addresses",
+        "Search individual or company surface owners based on County & State Query (Map Search Option Available)",
+        "Download and entire County surface owner listing – Each listing will include name (individual or company), email (s), phone number (s), address, county, state and a short legal description.",
+        "Download and individual county or multiple counties of surface owner listings.",
+        "Free searches without phone numbers and email addresses.",
     ],
 
     AboutUs: "About Us",
-    AboutUsDes: "Petro411.com (or “Petro411”) aka “oil & gas white pages” seeks to develop an oil and gas industry specific database to consolidate mineral owner contact and land data into one system. The key to the system is to align the oil and gas industry with an industry-specific phone data source, instead of continued use of the varied sources (i.e. Whitepages.com, Beenverified, Spokeo, Intelius, LexisNexis, etc.…).",
+    AboutUsDes: "Surface411.com has developed an industry specific database to consolidate surface owner contact and land data into one system.  The key to the system is to align the Surface industry with an industry-specific phone data source, instead of continued use of the varied sources (i.e. Whitepages.com, Beenverified, Spokeo, Intelius, LexisNexis, etc.…).",
 
     Testimonials: [
         {
             name: "Sarah M.",
             rating: 5,
-            review: "Petro411 made it incredibly easy to find the exact mineral data I needed. The platform is fast and reliable.",
+            review: "Surface411 made it incredibly easy to find the exact mineral data I needed. The platform is fast and reliable.",
             image: "/assets/images/reviewimg.webp"
         },
         {
@@ -109,7 +109,7 @@ export default {
         {
             name: "Emily K.",
             rating: 5,
-            review: "Secure, fast, and easy to use. Highly recommend Petro411 to anyone dealing with mineral data.",
+            review: "Secure, fast, and easy to use. Highly recommend Surface411 to anyone dealing with mineral data.",
             image: "/assets/emily.png"
         },
     ],
@@ -121,27 +121,13 @@ export default {
     StayInLoop: "Stay in the Loop",
     StayInLoopDes: "Subscribe to our newsletter for the latest updates on mineral ownership data, new county releases, platform features, and exclusive offers — delivered straight to your inbox.",
 
-    AboutUsPageSecOneDes: `Petro411.com is a technology product specializing in oil and gas
-              mineral owner information for acquisition, management, and
-              identification. The system is designed primarily for the oil and
-              gas industry’s professionals engaged in the land acquisition
-              process (i.e. land acquisition, mineral acquisition, oil and gas
-              leasing, etc. for the oil and gas industry).`,
-    AboutUsPageSecTwoTextOne: `Unlike all the people search sources mentioned, Petro411 will be County specific and based
-on government tax listings, which will align the phone contact numbers with data sources
-currently being utilized by oil and gas land and title professionals throughout the United
-States. Therefore, the data sources within Petro411 will coincide with existing land practices
-utilized to assess the feasibility of oil and gas land-based projects.`,
-    AboutUsPageSecTwoTextTwo: `Petro411.com provides individual mineral owner searches and Mineral Owner Listings with
-Phone Numbers and Emails throughout the United States, appends phone numbers to
-existing lists provided by the client, prepares customized orders based on how it’s requested
-from the client, phone number verification, cell phone numbers and landline phone
-numbers.`,
-
+    AboutUsPageSecOneDes: `Surface411.com is a technology product specializing in surface owner information for acquisition, management, and identification.  The system is designed for all individuals and industry professionals engaged in the land acquisition process (i.e. land acquisition, leasing, access, or any other use).`,
+    AboutUsPageSecTwoTextOne: `Unlike all the people search sources mentioned, Surface411.com will be County specific and based on government tax listings, which will align the phone contact numbers with data sources currently being utilized by land and title professionals throughout the United States.  Therefore, the data sources within Surface411 will coincide with existing land practices utilized to assess the feasibility of oil and gas land-based projects.`,
+    AboutUsPageSecTwoTextTwo: `Surface411.com provides individual surface owner searches and surface owner listings with phone numbers and emails throughout the United States, appends phone numbers to existing lists provided by the client, prepares customized orders based on how it’s requested from the client, phone number verification, cell phone numbers and landline phone numbers.`,
     OurVision: "Our vision",
-    OurVisionDes: "Petro411.com intends to become the primary data source for oil and gas land professionals to contact mineral owners.",
+    OurVisionDes: "To become the distinguished source for industry professional to contact surface owners for land transactions throughout the United States.",
 
-    ServicesDesc:`At Petro411, we provide reliable access to comprehensive mineral ownership data across the United States. From detailed property records to ownership information, our platform is designed to help investors, landmen, and energy professionals make informed decisions. With easy search tools, subscription-based downloads, and state-by-state insights, Petro411 delivers the data you need—when you need it.`,
+    ServicesDesc:`At Surface411, we provide reliable access to comprehensive surface ownership data across the United State.  From detailed property records to ownership information, our platform is designed to help individuals, investors, land professionals, and energy professional contact key individuals affecting their land assembly or acquisition process.`,
 
     WhatDrivesCards:[
   {
@@ -178,6 +164,6 @@ numbers.`,
 
 WhatDrivesUsDesc:'Core principles that shape our platform and your experience',
 
-SubscriptionPageDesc:"Choose the plan that fits your needs. Petro411 offers flexible pricing with access to accurate mineral owner data to streamline your land acquisition process."
+SubscriptionPageDesc:"Choose the plan that best fits your needs.  Surface411 offers flexible pricing with access to accurate mineral owner data to streamline your land acquisition process."
 
 }
