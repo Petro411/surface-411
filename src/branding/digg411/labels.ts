@@ -8,8 +8,8 @@ export default {
     // Home Page 
     YourMineralOwners: "Property Owner Contact HUB",
     SimplifiesLandAcquisition: "Digg411 simplifies the land acquisition process by providing accurate, secure contact information for property owners nationwide – built by industry experts for the land acquisition community.",
-    SearchMineralOwners: "Search mineral owners",
-    FindMineralOwners: "Find mineral owners fast with accurate contact details to support your land projects.",
+    SearchMineralOwners: "Search property owners",
+    FindMineralOwners: "Find property owners fast with accurate contact details to support your land projects.",
 
     // Auth Pages 
     Login: "Login",
@@ -63,13 +63,13 @@ export default {
 
 
     MineralOwnersByState: "Property Owners by State",
-    ExploreMineralOwnership: "Explore property ownership across the U.S. with Digg411.  Select any state to instantly access detailed property owner information, including property data and ownership records.  Whether you’re researching opportunities or verifying ownership, Digg411 makes it simple to navigate state and county specific mineral data in just one click.",
+    ExploreMineralOwnership: "Explore property ownership across the U.S. with Digg411.  Select any state to instantly access detailed property owner information, including property data and ownership records.  Whether you’re researching opportunities or verifying ownership, Digg411 makes it simple to navigate state and county specific property data in just one click.",
 
     OurCompany: "Our Company",
     TeamHasTheRequired: "Digg411’s team has the required land experience to successfully execute and deliver a quality property owner database.  With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land planning, land development and government.",
 
     HowItWorks: "How it works?",
-    HowItWorksDes: "Digg411, LLC is the first mineral owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
+    HowItWorksDes: "Digg411 is the first property owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
 
     HowItWorksCards: [
         "Search individual or company property owners based on County & State Query (Map Search Option Available)",
@@ -85,7 +85,7 @@ export default {
         {
             name: "Sarah M.",
             rating: 5,
-            review: "Digg411 made it incredibly easy to find the exact mineral data I needed. The platform is fast and reliable.",
+            review: "Digg411 made it incredibly easy to find the exact property data I needed. The platform is fast and reliable.",
             image: "/assets/images/reviewimg.webp"
         },
         {
@@ -109,17 +109,17 @@ export default {
         {
             name: "Emily K.",
             rating: 5,
-            review: "Secure, fast, and easy to use. Highly recommend Digg411 to anyone dealing with mineral data.",
+            review: "Secure, fast, and easy to use. Highly recommend Digg411 to anyone dealing with property data.",
             image: "/assets/emily.png"
         },
     ],
 
     WithBrandName: "With Digg411",
-    WithBrandDes: "Quickly find mineral owners and property details—just enter your criteria and get results instantly with Digg411.",
-    FindTheMineralData: "Find the mineral data you need—faster and smarter.",
+    WithBrandDes: "Quickly find surface owners and property details—just enter your criteria and get results instantly with Digg411.",
+    FindTheMineralData: "Find the surface data you need—faster and smarter.",
 
     StayInLoop: "Stay in the Loop",
-    StayInLoopDes: "Subscribe to our newsletter for the latest updates on mineral ownership data, new county releases, platform features, and exclusive offers — delivered straight to your inbox.",
+    StayInLoopDes: "Subscribe to our newsletter for the latest updates on property ownership data, new county releases, platform features, and exclusive offers — delivered straight to your inbox.",
 
     AboutUsPageSecOneDes: `Digg411.com is a technology product specializing in property owner information for acquisition, management, and identification.  The system is designed for all individuals and industry professionals engaged in the land acquisition process (i.e. land acquisition, leasing, access, or any other use).`,
     AboutUsPageSecTwoTextOne: `Unlike all the people search sources mentioned, Digg411.com will be County specific and based on government tax listings, which will align the phone contact numbers with data sources currently being utilized by land and title professionals throughout the United States.  Therefore, the data sources within Digg411 will coincide with existing land practices utilized to assess the feasibility of oil and gas land-based projects.`,
@@ -134,19 +134,19 @@ export default {
   {
     title: "User-Centered Experience",
     description:
-      "Search individual or company mineral owners based on County & State Query (Map Search Option available)",
+      "Search individual or company property owners based on County & State Query (Map Search Option available)",
     image: "/assets/images/like.png",
   },
   {
     title: "Data Accuracy",
     description:
-      "Download an entire County mineral owner listing - Each mineral owner listing will include name (Individual or Company), email (s), phone number (s), address, county, state and a short legal description.",
+      "Download an entire County property owner listing - Each property owner listing will include name (Individual or Company), email (s), phone number (s), address, county, state and a short legal description.",
     image: "/assets/images/accurad.png",
   },
   {
     title: "Security First",
     description:
-      "Download multiple Counties mineral owner listings",
+      "Download multiple Counties property owner listings",
     image: "/assets/images/lock.png",
   },
   {
@@ -165,7 +165,7 @@ export default {
 
 WhatDrivesUsDesc:'Core principles that shape our platform and your experience',
 
-SubscriptionPageDesc:"Choose the plan that best fits your needs.  Digg411 offers flexible pricing with access to accurate mineral owner data to streamline your land acquisition process.",
+SubscriptionPageDesc:"Choose the plan that best fits your needs.  Digg411 offers flexible pricing with access to accurate property owner data to streamline your land acquisition process.",
 ContactUs:"Contact Us",
 ContactUsDesc:"If you have any questions or concerns, please contact us using the form below.",
   ServiceCards: [
@@ -173,7 +173,7 @@ ContactUsDesc:"If you have any questions or concerns, please contact us using th
       title: "Verified Property Ownership Data",
       subtitle: "Accurate & Up-to-Date",
       description:
-        "We provide reliable and regularly updated information on mineral owners, ensuring your research is always backed by trustworthy data.",
+        "We provide reliable and regularly updated information on property owners, ensuring your research is always backed by trustworthy data.",
       image: "/assets/images/list.png",
     },
     {
@@ -194,7 +194,7 @@ ContactUsDesc:"If you have any questions or concerns, please contact us using th
       title: "Advanced Search Filters",
       subtitle: "Find Exactly What You Need",
       description:
-        "Use our smart search tools to quickly locate mineral owners, locations, and specific data with ease.",
+        "Use our smart search tools to quickly locate property owners, locations, and specific data with ease.",
       image: "/assets/images/search.png",
     },
     {
