@@ -3,7 +3,7 @@ export default {
     SiteName: "Row411",
     SiteDomain: "row411.com.",
 
-    CopyRight: "Copyright © 2025 row411.com. All rights reserved.",
+    CopyRight: "Copyright 2025 Petro411, LLC All rights reserved",
 
     // Home Page 
     YourMineralOwners: "Property Owner Contact HUB",

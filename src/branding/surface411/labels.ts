@@ -3,11 +3,11 @@ export default {
     SiteName: "Surface411",
     SiteDomain: "surface411.com.",
 
-    CopyRight: "Copyright © 2025 surface411.com. All rights reserved.",
+    CopyRight: "Copyright 2025 Petro411, LLC All rights reserved",
 
     // Home Page 
     YourMineralOwners: "Surface Owner Contact HUB",
-    SimplifiesLandAcquisition: "Surface 411 simplifies the land acquisition process by providing accurate, secure contact information for surface owners nationwide – built by industry experts for the land acquisition community.",
+    SimplifiesLandAcquisition: "Surface411 simplifies the land acquisition process by providing accurate, secure contact information for surface owners nationwide – built by industry experts for the land acquisition community.",
     SearchMineralOwners: "Search Surface Owners",
     FindMineralOwners: "Find property owners fast with accurate contact details to support your land projects.",
 
