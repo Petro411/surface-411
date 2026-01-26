@@ -69,7 +69,7 @@ export default {
     TeamHasTheRequired: "ROW411’s team has the required land experience to successfully execute and deliver a quality property owner database.  With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land planning, land development and government.",
 
     HowItWorks: "How it works?",
-    HowItWorksDes: "Row411 is the first surface owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
+    HowItWorksDes: "Row411 is the first surface owner database to utilize government property records from specific Counties and merge them with current phone numbers and emails.",
 
     HowItWorksCards: [
         "Search individual or company property owners based on County & State Query (Map Search Option Available)",

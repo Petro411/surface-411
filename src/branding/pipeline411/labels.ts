@@ -1,7 +1,7 @@
 export default {
 
     SiteName: "Pipeline411",
-    SiteDomain: "pipeline411.com.",
+    SiteDomain: "Pipeline411.net",
 
     CopyRight: "Copyright 2025 Petro411, LLC All rights reserved",
 
@@ -69,7 +69,7 @@ export default {
     TeamHasTheRequired: "Pipeline411’s team has the required land experience to successfully execute and deliver a quality surface owner database.  With a combined experience of nearly 30 years that includes oil and gas, real estate titles, environmental, residential, commercial, land planning, land development and government.",
 
     HowItWorks: "How it works?",
-    HowItWorksDes: "Pipeline is the first surface owner database to utilize government property records from specific oil and gas Counties and merge them with current phone numbers and emails.",
+    HowItWorksDes: "Pipeline is the first surface owner database to utilize government property records from specific Counties and merge them with current phone numbers and emails.",
 
     HowItWorksCards: [
         "Search individual or company surface owners based on County & State Query (Map Search Option Available)",
@@ -79,7 +79,7 @@ export default {
     ],
 
     AboutUs: "About Us",
-    AboutUsDes: "Pipeline411.com has developed an industry specific database to consolidate surface owner contact and land data into one system.  The key to the system is to align the pipeline industry with an industry-specific phone data source, instead of continued use of the varied sources (i.e. Whitepages.com, Beenverified, Spokeo, Intelius, LexisNexis, etc.…).",
+    AboutUsDes: "Pipeline411.net has developed an industry specific database to consolidate surface owner contact and land data into one system.  The key to the system is to align the pipeline industry with an industry-specific phone data source, instead of continued use of the varied sources (i.e. Whitepages.com, Beenverified, Spokeo, Intelius, LexisNexis, etc.…).",
 
     Testimonials: [
         {
@@ -121,9 +121,9 @@ export default {
     StayInLoop: "Stay in the Loop",
     StayInLoopDes: "Subscribe to our newsletter for the latest updates on surface ownership data, new county releases, platform features, and exclusive offers — delivered straight to your inbox.",
 
-    AboutUsPageSecOneDes: `Pipeline411.com is a technology product specializing in surface owner information for acquisition, management, and identification.  The system is designed for all individuals and industry professionals engaged in the land acquisition process (i.e. land acquisition, leasing, access, or any other use).`,
-    AboutUsPageSecTwoTextOne: `Unlike all the people search sources mentioned, Pipeline411.com will be County specific and based on government tax listings, which will align the phone contact numbers with data sources currently being utilized by land and title professionals throughout the United States.  Therefore, the data sources within Pipeline411 will coincide with existing land practices utilized to assess the feasibility of oil and gas land-based projects.`,
-    AboutUsPageSecTwoTextTwo: `Pipeline411.com provides individual surface owner searches and surface owner listings with phone numbers and emails throughout the United States, appends phone numbers to existing lists provided by the client, prepares customized orders based on how it’s requested from the client, phone number verification, cell phone numbers and landline phone numbers.`,
+    AboutUsPageSecOneDes: `Pipeline.net is a technology product specializing in surface owner information for acquisition, management, and identification.  The system is designed for all individuals and industry professionals engaged in the land acquisition process (i.e. land acquisition, leasing, access, or any other use).`,
+    AboutUsPageSecTwoTextOne: `Unlike all the people search sources mentioned, Pipeline.net will be County specific and based on government tax listings, which will align the phone contact numbers with data sources currently being utilized by land and title professionals throughout the United States.  Therefore, the data sources within Pipeline411 will coincide with existing land practices utilized to assess the feasibility of oil and gas land-based projects.`,
+    AboutUsPageSecTwoTextTwo: `Pipeline.net provides individual surface owner searches and surface owner listings with phone numbers and emails throughout the United States, appends phone numbers to existing lists provided by the client, prepares customized orders based on how it’s requested from the client, phone number verification, cell phone numbers and landline phone numbers.`,
 
     OurVision: "Our vision",
     OurVisionDes: "To become the distinguished source for industry professional to contact surface owners for land transactions throughout the United States.",

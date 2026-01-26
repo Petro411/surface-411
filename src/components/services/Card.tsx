@@ -1,6 +1,7 @@
 import { Flex, Heading, Text } from "@radix-ui/themes";
-import Image from "next/image";
 import React, { memo } from "react";
+import Image from "next/image";
+
 
 type Props = {
   image?: string;
@@ -10,7 +11,7 @@ type Props = {
 
 const Card = ({ image, title, description }: Props) => {
   return (
-    <div className="border p-6 2xl:p-8 rounded-xl flex flex-col gap-5 hover:border-primary transition-all duration-300">
+    <div className="border p-6 2xl:p-8 rounded-xl flex flex-col gap-5 hover:border-primary transition-all duration-300 h-full">
       <div className="">
         <Image alt="" src={image ?? ""} height={45} width={45} />
       </div>
