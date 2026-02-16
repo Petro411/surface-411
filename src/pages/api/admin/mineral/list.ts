@@ -6,7 +6,14 @@ import { withAuth } from "@/lib/middlewares/withAuth";
 
 async function handler(req: any, res: any) {
   try {
-    let { page = 1, limit = 10 } = req.query;
+    let {
+      page = 1,
+      limit = 10,
+      name,
+      stateName,
+      stateCode,
+      counties,
+    } = req.query;
 
     page = parseInt(page, 10);
     limit = parseInt(limit, 10);
@@ -16,12 +23,30 @@ async function handler(req: any, res: any) {
 
     const skip = (page - 1) * limit;
 
+    const filter: any = {};
+
+    if (name) {
+      filter.names = { $regex: name, $options: "i" };
+    }
+
+    if (stateCode) {
+      filter["state.code"] = { $regex: stateCode, $options: "i" };
+    }
+
+    if (counties) {
+      const countiesArray = Array.isArray(counties)
+        ? counties
+        : counties.split(",");
+
+      filter.counties = { $in: countiesArray };
+    }
+
     const [minerals, total] = await Promise.all([
-      MineralOwner.find({})
+      MineralOwner.find(filter)
         .skip(skip)
         .limit(limit)
         .lean(),
-      MineralOwner.countDocuments(),
+      MineralOwner.countDocuments(filter),
     ]);
 
     return res.status(200).json({
