@@ -17,9 +17,16 @@ async function handler(req: any, res: NextApiResponse) {
             query.counties = { $elemMatch: { $regex: new RegExp(`^${name?.replace(/\s*county\s*$/i, "").trim()}(\\s*county)?$`, 'i') } };
         }
 
-        const total = await MineralOwner.countDocuments(query);
+         const sanitizedFilter = {
+            ...query,
+            "counties.0": { $exists: true },
+            "state.code": { $exists: true },
+            "state.name": { $exists: true },
+        };
 
-        const minerals = await MineralOwner.find(query)
+        const total = await MineralOwner.countDocuments(sanitizedFilter);
+
+        const minerals = await MineralOwner.find(sanitizedFilter)
             .skip(skip)
             .limit(limitNum);
 

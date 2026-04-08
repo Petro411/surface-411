@@ -30,6 +30,9 @@ function mapToMineralOwnerSchema(row: any, fallback: { state?: any; counties?: s
     ? { name: stateName, code: stateCode }
     : null;
 
+  const ownerStateCode = safeTrim(cleanRow["addr_state"]).toUpperCase();
+  const ownerState = ownerStateCode ? { name: US_STATES[ownerStateCode], code: ownerStateCode } : null;
+
   const rowCounties = [
     safeTrim(cleanRow["County"])
   ].filter(Boolean);
@@ -65,7 +68,8 @@ function mapToMineralOwnerSchema(row: any, fallback: { state?: any; counties?: s
     description: safeTrim(cleanRow["legal_description"]),
     city: safeTrim(cleanRow["addr_city"]),
 
-    state: rowState || fallback.state || { name: "", code: "" }
+    state: rowState || fallback.state || { name: "", code: "" },
+    ownerState: ownerState || fallback.state || { name: "", code: "" }
   };
 }
 

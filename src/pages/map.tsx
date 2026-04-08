@@ -414,10 +414,11 @@ const MineralsTable = memo(({ state }: MineralsTableProps) => {
                 <Table.Row>
                   <Table.ColumnHeaderCell>Name</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-                  <Table.ColumnHeaderCell>Phone</Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell>Phone numbers</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>Address</Table.ColumnHeaderCell>
-                  <Table.ColumnHeaderCell>County</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>State</Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell>County</Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell>City</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>Zipcode</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
                 </Table.Row>
@@ -470,11 +471,14 @@ const MineralsTable = memo(({ state }: MineralsTableProps) => {
                       </div>
                     </Table.Cell>
 
+                    {/* State */}
+                    <Table.Cell>{item?.state?.name}</Table.Cell>
+
                     {/* Counties */}
                     <Table.Cell>{item?.counties?.join(", ")}</Table.Cell>
 
-                    {/* State */}
-                    <Table.Cell>{item?.state?.name}</Table.Cell>
+
+                    <Table.Cell>{item?.city ? item?.city : "-"}</Table.Cell>
 
                     {/* Zipcode */}
                     <Table.Cell>{item?.zipcode}</Table.Cell>

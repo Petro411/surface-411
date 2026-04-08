@@ -41,12 +41,19 @@ async function handler(req: any, res: any) {
       filter.counties = { $in: countiesArray };
     }
 
+    const sanitizedFilter = {
+      ...filter,
+      "counties.0": { $exists: true },
+      "state.code": { $exists: true },
+      "state.name": { $exists: true },
+    };
+
     const [minerals, total] = await Promise.all([
-      MineralOwner.find(filter)
+      MineralOwner.find(sanitizedFilter)
         .skip(skip)
         .limit(limit)
         .lean(),
-      MineralOwner.countDocuments(filter),
+      MineralOwner.countDocuments(sanitizedFilter),
     ]);
 
     return res.status(200).json({

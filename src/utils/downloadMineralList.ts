@@ -7,6 +7,7 @@ type Item = {
   counties: string[];
   zipcode: string;
   description: string;
+  city?:string;
   state: {
     name: string;
     code: string;
@@ -74,6 +75,7 @@ export const formateListToCSV = (data: Item[]) => {
     "County",
     "Zip",
     "Description",
+    "City",
     "State",       // State Name
     "State Code"
   ];
@@ -86,6 +88,7 @@ export const formateListToCSV = (data: Item[]) => {
     Array.isArray(item.counties) ? item.counties.join(", ") : (item.counties ?? ""),
     item.zipcode ?? "",
     item.description ?? "",
+    item.city ?? "",
     item.state?.name ?? "",
     item.state?.code ?? ""
   ]);

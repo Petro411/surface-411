@@ -27,12 +27,20 @@ const OwnerDetails = ({ id, setSelectedId }: Props) => {
   }, [id]);
 
   const renderFieldsValues = useCallback(() => {
-    const a = _.omit(data?.owner, ["_id", "__v", "updatedAt", "createdAt","description"]);
+    const a = _.omit(data?.owner, [
+      "_id",
+      "__v",
+      "updatedAt",
+      "createdAt",
+      "description",
+    ]);
     return Object.entries(a).map(([key, value]) => (
       <Fragment key={key}>
         <Text size={"3"} weight={"medium"} mt={"4"}>
           {key === "zipcode" ? (
             "Zip code"
+          ) : key === "numbers" ? (
+            "Phone numbers"
           ) : (
             <>
               {key[0]?.toUpperCase()}
@@ -49,17 +57,15 @@ const OwnerDetails = ({ id, setSelectedId }: Props) => {
           <Text size="3" color="gray">
             {value?.name}
           </Text>
-        ) : 
-        key === "names" ? (
-           <Flex direction={"column"} gap={"1"}>
+        ) : key === "names" ? (
+          <Flex direction={"column"} gap={"1"}>
             {value?.map((name: string, id: number) => (
               <Text key={id} size="3" color="gray">
                 {name}
               </Text>
             ))}
           </Flex>
-        ) :
-        key === "emails" ? (
+        ) : key === "emails" ? (
           !authContext?.user || !authContext?.user?.subscription ? (
             <LockedSection user={authContext?.user} />
           ) : authContext?.user && authContext?.user?.subscription ? (

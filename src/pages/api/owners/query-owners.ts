@@ -33,10 +33,17 @@ async function handler(req: any, res: NextApiResponse) {
             };
         }
 
+        const sanitizedFilter = {
+            ...filter,
+            "counties.0": { $exists: true },
+            "state.code": { $exists: true },
+            "state.name": { $exists: true },
+        };
+
         const [owners, totalItems, counties] = await Promise.all([
-            MineralOwner.find(filter).skip(skip).limit(limitNum),
-            MineralOwner.countDocuments(filter),
-            Location.find({ type: "county", "state.code": { $regex: new RegExp(ownerCity, 'i') } }).sort({name:1})
+            MineralOwner.find(sanitizedFilter).skip(skip).limit(limitNum),
+            MineralOwner.countDocuments(sanitizedFilter),
+            Location.find({ type: "county", "state.code": { $regex: new RegExp(ownerCity, 'i') } }).sort({ name: 1 })
         ]);
 
         return res.status(200).json({
@@ -44,7 +51,7 @@ async function handler(req: any, res: NextApiResponse) {
             currentPage: pageNum,
             totalItems,
             totalPages: Math.ceil(totalItems / limitNum),
-            counties:ownerCity?.length ? counties : []
+            counties: ownerCity?.length ? counties : []
         });
 
     } catch (error: any) {
