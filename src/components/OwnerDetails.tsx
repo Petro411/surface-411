@@ -127,7 +127,7 @@ const MineralAddress = ({ owner }: { owner: Owner }) => {
         <GrayText value={`${c} County`} />{","}
         </Fragment>
       ))}
-      {state?.name && <GrayText value={`${state.name} (${state.code})`} />}
+      {state?.name && <GrayText value={`${state.name}`} />}
     </Flex>
   );
 };
