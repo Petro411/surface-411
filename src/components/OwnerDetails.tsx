@@ -93,7 +93,7 @@ const LockedSection = memo(({ user }: { user: any }) => (
  */
 const MineralOwnerAddress = ({ owner }: { owner: Owner }) => {
   const { addresses, city, ownerState, zipcode, state } = owner;
-  const cityLine = [city, ownerState?.name, state?.name].filter(Boolean).join(", ");
+  const cityLine = [city, ...new Set([ownerState?.name, state?.name])].filter(Boolean).join(", ");
   const cityZipLine = [cityLine, zipcode].filter(Boolean).join("  ");
 
   return (
