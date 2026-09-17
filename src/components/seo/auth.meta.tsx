@@ -22,27 +22,27 @@ const AUTH_PAGE_DEFAULTS: Record<
   { title: string; description: string; url: string }
 > = {
   login: {
-    title: "Login | Petro411",
+    title: "Login | Surface411",
     description:
-      "Log in to your Petro411 account to search and access verified mineral owner contact data nationwide.",
-    url: "https://www.petro411.com/auth/login",
+      "Log in to your Surface411 account to search and access verified surface owner contact data nationwide.",
+    url: "https://www.surface411.com/auth/login",
   },
   signup: {
-    title: "Sign Up | Petro411",
+    title: "Sign Up | Surface411",
     description:
-      "Create a free Petro411 account to start searching mineral owner contact information by county and state.",
-    url: "https://www.petro411.com/auth/sign-up",
+      "Create a free Surface411 account to start searching surface owner contact information by county and state.",
+    url: "https://www.surface411.com/auth/sign-up",
   },
   "forgot-password": {
-    title: "Reset Your Password | Petro411",
+    title: "Reset Your Password | Surface411",
     description:
-      "Forgot your password? Reset your Petro411 account password securely and regain access to mineral owner data.",
-    url: "https://www.petro411.com/auth/forgot-password",
+      "Forgot your password? Reset your Surface411 account password securely and regain access to surface owner data.",
+    url: "https://www.surface411.com/auth/forgot-password",
   },
 };
 
 /**
- * SeoHeadAuth — reusable Head component for Petro411 Auth pages
+ * SeoHeadAuth — reusable Head component for Surface411 Auth pages
  * (Next.js Pages Router)
  *
  * Covers: /auth/login, /auth/sign-up, /auth/forgot-password
@@ -72,7 +72,7 @@ const AUTH_PAGE_DEFAULTS: Record<
  *
  * <SeoHeadAuth
  *   page="login"
- *   title="Custom Login Title | Petro411"
+ *   title="Custom Login Title | Surface411"
  *   description="Custom description..."
  * />
  */
@@ -92,9 +92,9 @@ export default function SeoHeadAuth({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Petro411",
-    url: "https://www.petro411.com/",
-    logo: "https://www.petro411.com/logo-name.png",
+    name: "Surface411",
+    url: "https://www.surface411.com/",
+    logo: "https://www.surface411.com/logo-name.png",
   };
 
   return (
@@ -119,7 +119,7 @@ export default function SeoHeadAuth({
       <meta property="og:description" content={finalDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={finalUrl} />
-      <meta property="og:site_name" content="Petro411" />
+      <meta property="og:site_name" content="Surface411" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />

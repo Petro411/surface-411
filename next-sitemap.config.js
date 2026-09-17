@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.petro411.com",
+  siteUrl: "https://www.surface411.com",
   generateRobotsTxt: true,
   exclude: ["/owners/*"],
   transform: async (config, path) => {

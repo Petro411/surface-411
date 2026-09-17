@@ -28,17 +28,17 @@ const LEGAL_PAGE_DEFAULTS: Record<
   { title: string; description: string; url: string; schemaType: string }
 > = {
   privacy: {
-    title: "Privacy Policy | Petro411",
+    title: "Privacy Policy | Surface411",
     description:
-      "Read Petro411's Privacy Policy to understand how we collect, use, and protect your personal information across our mineral owner data platform.",
-    url: "https://www.petro411.com/privacy",
+      "Read Surface411's Privacy Policy to understand how we collect, use, and protect your personal information across our surface owner data platform.",
+    url: "https://www.surface411.com/privacy",
     schemaType: "PrivacyPolicy",
   },
   terms: {
-    title: "Terms of Use | Petro411",
+    title: "Terms of Use | Surface411",
     description:
-      "Review Petro411's Terms of Use governing access to our mineral owner contact database and land acquisition data services.",
-    url: "https://www.petro411.com/terms",
+      "Review Surface411's Terms of Use governing access to our surface owner contact database and land acquisition data services.",
+    url: "https://www.surface411.com/terms",
     schemaType: "TermsOfService",
   },
 };
@@ -65,7 +65,7 @@ function generateDescriptionFromHtml(html: string, maxLength = 155): string {
 }
 
 /**
- * SeoHeadLegal — reusable Head component for Petro411 legal pages
+ * SeoHeadLegal — reusable Head component for Surface411 legal pages
  * (Next.js Pages Router)
  *
  * Covers: /privacy, /terms
@@ -114,9 +114,9 @@ export default function SeoHeadLegal({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Petro411",
-    url: "https://www.petro411.com/",
-    logo: "https://www.petro411.com/logo-name.png",
+    name: "Surface411",
+    url: "https://www.surface411.com/",
+    logo: "https://www.surface411.com/logo-name.png",
   };
 
   const webPageSchema = {
@@ -128,12 +128,12 @@ export default function SeoHeadLegal({
     url: finalUrl,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://www.petro411.com/",
-      name: "Petro411",
+      url: "https://www.surface411.com/",
+      name: "Surface411",
     },
     publisher: {
       "@type": "Organization",
-      name: "Petro411",
+      name: "Surface411",
     },
     ...(lastUpdated && { dateModified: lastUpdated }),
   };
@@ -153,7 +153,7 @@ export default function SeoHeadLegal({
       <meta property="og:description" content={finalDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={finalUrl} />
-      <meta property="og:site_name" content="Petro411" />
+      <meta property="og:site_name" content="Surface411" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />

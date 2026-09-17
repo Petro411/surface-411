@@ -6,7 +6,7 @@ const OtpTemplate = (otp: string) => `
     <p>This OTP is valid for 5 minutes.</p>
     <p>If you didn't request this, you can ignore this email.</p>
     <br>
-    <small>— Petro411</small>
+    <small>— Surface411</small>
   </div>
 `;
 

@@ -2,10 +2,10 @@ import TextImageColumn from "@/components/TextImageColumn";
 import { Flex, Heading, Text } from "@radix-ui/themes";
 import OurCompany from "@/components/home/OurCompany";
 import baseApi, { endpoints } from "@/services/api";
+import { SiteHeader, Footer } from "@/components";
 import SeoHead from "@/components/seo/home.meta";
 import PageHeader from "@/components/PageHeader";
 import Container from "@/components/Container";
-import { SiteHeader, Footer } from "@/components";
 import About from "@/components/home/About";
 import Faqs from "@/components/home/Faqs";
 import { GetStaticProps } from "next";
@@ -21,9 +21,9 @@ const AboutUs = ({ faqs }: Props) => {
   return (
     <>
       <SeoHead
-        title="About Petro411 | Mineral Owner Data for Landmen"
-        description="Petro411 is built by landmen, for landmen — delivering accurate, verified mineral owner contact data to power faster, smarter land acquisition."
-        url="https://www.petro411.com/about"
+        title="About Surface411 | Surface Owner Data for Landmen"
+        description="Surface411 is built by landmen, for landmen — delivering accurate, verified Surface owner contact data to power faster, smarter land acquisition."
+        url="https://www.surface411.com/about"
         faqs={faqs}
       />
       <SiteHeader />
@@ -48,7 +48,7 @@ const AboutUs = ({ faqs }: Props) => {
             </div>
             <div className={`flex flex-row justify-center lg:justify-end`}>
               <Image
-                alt="Our Vision - Petro411"
+                alt="Our Vision - Surface411"
                 src={"/industries/land-6.png"}
                 height={450}
                 width={450}

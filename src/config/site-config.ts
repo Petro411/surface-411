@@ -1,22 +1,22 @@
 const siteConfig = {
-    title: "Petro411 - Mineral Data Made Simple",
-    description: "Discover detailed mineral ownership data with Petro411. Subscribe to access verified property and ownership information quickly and easily.",
-    domain: "https://petro411.com",
+    title: "Surface Data Made Simple",
+    description: "Discover detailed Surface ownership data with Surface. Subscribe to access verified property and ownership information quickly and easily.",
+    domain: "https://surface.com",
 
     keywords: [
-        "Mineral Data",
-        "Mineral Owners",
+        "Surface Data",
+        "Surface Owners",
         "Land Ownership",
         "Property Search",
-        "Petro411",
-        "Subscription Mineral Platform",
+        "surface",
+        "Subscription Surface Platform",
     ],
 
-    author: "Petro411 Team",
+    author: "Surface Team",
     logo: "/assets/logo.svg", // adjust as needed
     socialLinks: {
-        twitter: "https://twitter.com/petro411",
-        linkedin: "https://linkedin.com/company/petro411",
+        twitter: "https://twitter.com/surface",
+        linkedin: "https://linkedin.com/company/surface",
     },
     UserTypes: {
         user: "user",
@@ -34,7 +34,7 @@ const siteConfig = {
                 noOfDownloads: 1,
             },
             summary:
-                "Search and viewing of individual Mineral Owner Name, Address, and Legal Description. Free viewing of mineral lists without phone numbers.",
+                "Search and viewing of individual Surface Owner Name, Address, and Legal Description. Free viewing of Surface lists without phone numbers.",
         },
         {
             name: "Entry Level",
@@ -47,7 +47,7 @@ const siteConfig = {
                 noOfDownloads: 20,
             },
             summary:
-                "Access expanded county data. View mineral owner contact info and download up to 20 records per month.",
+                "Access expanded county data. View Surface owner contact info and download up to 20 records per month.",
         },
         {
             name: "Professional",
@@ -61,7 +61,7 @@ const siteConfig = {
             },
             recommended: true,
             summary:
-                "Ideal for professionals managing multiple counties. Includes downloads, full mineral lists with contacts, and more users.",
+                "Ideal for professionals managing multiple counties. Includes downloads, full Surface lists with contacts, and more users.",
         },
         // {
         //     name: "Management",
@@ -85,7 +85,7 @@ const siteConfig = {
         //         noOfDownloads: "Unlimited",
         //     },
         //     summary:
-        //         "Complete platform access for large organizations. Unlimited downloads, priority support, and the full suite of mineral ownership data tools.",
+        //         "Complete platform access for large organizations. Unlimited downloads, priority support, and the full suite of Surface ownership data tools.",
         // },
     ]
 };

@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className="flex flex-row justify-center lg:justify-end">
           <Image
-            alt="About Us - Petro411"
+            alt="About Us - Surface411"
             src={"/industries/land-9.png"}
             className="rounded-lg overflow-x-hidden"
             height={450}

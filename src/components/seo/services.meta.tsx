@@ -22,7 +22,7 @@ interface SeoHeadServicesProps {
 }
 
 /**
- * SeoHeadServices — reusable Head component for Petro411 Services page
+ * SeoHeadServices — reusable Head component for Surface411 Services page
  * (Next.js Pages Router)
  *
  * Usage (in pages/services.tsx):
@@ -31,9 +31,9 @@ interface SeoHeadServicesProps {
  *
  * const ServiceCards: ServiceCard[] = [
  *   {
- *     title: "Verified Mineral Ownership Data",
+ *     title: "Verified Surface Ownership Data",
  *     subtitle: "Accurate & Up-to-Date",
- *     description: "We provide reliable and regularly updated information on mineral owners, ensuring your research is always backed by trustworthy data.",
+ *     description: "We provide reliable and regularly updated information on Surface owners, ensuring your research is always backed by trustworthy data.",
  *     image: "/assets/images/list.png",
  *   },
  *   // ...rest of the service cards
@@ -53,20 +53,20 @@ interface SeoHeadServicesProps {
  * }
  */
 export default function SeoHeadServices({
-  title = "Our Services | Mineral Owner Data Solutions | Petro411",
-  description = "Verified mineral ownership data, downloadable spreadsheets, advanced search filters and secure access — explore Petro411's full suite of services for land professionals.",
-  url = "https://www.petro411.com/services",
+  title = "Our Services | Surface Owner Data Solutions | Surface411",
+  description = "Verified Surface ownership data, downloadable spreadsheets, advanced search filters and secure access — explore Surface411's full suite of services for land professionals.",
+  url = "https://www.surface411.com/services",
   faqs = [],
   services = [],
 }: SeoHeadServicesProps) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Petro411",
-    url: "https://www.petro411.com/",
-    logo: "https://www.petro411.com/logo-name.png",
+    name: "Surface411",
+    url: "https://www.surface411.com/",
+    logo: "https://www.surface411.com/logo-name.png",
     description:
-      "Petro411 provides accurate, secure mineral owner contact information nationwide for the oil and gas industry.",
+      "Surface411 provides accurate, secure Surface owner contact information nationwide for the oil and gas industry.",
   };
 
   // ItemList + Service schema — built dynamically from the services array
@@ -84,13 +84,13 @@ export default function SeoHeadServices({
               description: service.description,
               provider: {
                 "@type": "Organization",
-                name: "Petro411",
+                name: "Surface411",
               },
               areaServed: "US",
               ...(service.image && {
                 image: service.image.startsWith("http")
                   ? service.image
-                  : `https://www.petro411.com${service.image}`,
+                  : `https://www.surface411.com${service.image}`,
               }),
             },
           })),
@@ -131,9 +131,9 @@ export default function SeoHeadServices({
       />
       <meta
         property="og:image"
-        content="https://www.petro411.com/assets/cover-bg.png"
+        content="https://www.surface411.com/assets/cover-bg.png"
       />
-      <meta property="og:site_name" content="Petro411" />
+      <meta property="og:site_name" content="Surface411" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

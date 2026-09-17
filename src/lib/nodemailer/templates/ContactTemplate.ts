@@ -25,7 +25,7 @@ const ContactTemplate = ({
 
     <p>Please reply to this email if needed.</p>
     <br>
-    <small>— Petro411 Website</small>
+    <small>— Surface411 Website</small>
   </div>
 `;
 

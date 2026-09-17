@@ -87,7 +87,7 @@ const NewsLetter = () => {
         <div className={`h-full`}>
           <Image
             src={"/assets/images/newsletter.jpg"}
-            alt="Petro411 - Stay in the loop with our newsletter"
+            alt="Surface411 - Stay in the loop with our newsletter"
             className="h-full w-full object-cover"
             height={400}
             width={400}

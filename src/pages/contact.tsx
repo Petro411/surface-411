@@ -46,9 +46,9 @@ const ContactPage = ({ faqs }: { faqs: any[] | [] }) => {
   return (
     <>
       <SeoHead
-        title="Contact Us | Petro411"
-        description="Have questions or need assistance? Reach out to the Petro411 team for support, inquiries, or feedback. We're here to help you with your mineral owner data needs."
-        url="https://www.petro411.com/contact"
+        title="Contact Us | Surface411"
+        description="Have questions or need assistance? Reach out to the Surface411 team for support, inquiries, or feedback. We're here to help you with your mineral owner data needs."
+        url="https://www.surface411.com/contact"
         faqs={faqs}
         allowIndexing={true}
       />

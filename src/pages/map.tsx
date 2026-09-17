@@ -27,8 +27,8 @@ function Map() {
     <div>
       <SeoHead
         title="Surface Owners Map | Search by State & County | Surface411"
-        description="Explore Petro411's interactive map to find surface owners near you. Select a state, choose a county, and view detailed surface ownership listings instantly."
-        url="https://www.petro411.com/map"
+        description="Explore Surface411's interactive map to find surface owners near you. Select a state, choose a county, and view detailed surface ownership listings instantly."
+        url="https://www.surface411.com/map"
       />
       <SiteHeader />
       <div className={`gradientBg text-white`}>

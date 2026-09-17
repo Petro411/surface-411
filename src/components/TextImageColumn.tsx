@@ -56,7 +56,7 @@ const TextImageColumn = ({
           }`}
         >
           <Image
-            alt={title ? `${title} - Petro411` : "Petro411"}
+            alt={title ? `${title} - Surface411` : "Surface411"}
             src={image ? image : "/assets/images/empty-img.jpg"}
             height={450}
             className="rounded-lg overflow-x-hidden"

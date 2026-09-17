@@ -4,7 +4,7 @@ Allow: /
 Disallow: /owners/*
 
 # Host
-Host: https://www.petro411.com
+Host: https://www.surface411.com
 
 # Sitemaps
-Sitemap: https://www.petro411.com/sitemap.xml
+Sitemap: https://www.surface411.com/sitemap.xml

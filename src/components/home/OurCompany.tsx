@@ -24,7 +24,7 @@ const OurCompany = () => {
 
         <div className="flex flex-row order-1 lg:order-2 justify-center lg:justify-end">
           <Image
-            alt="Our Company - Petro411"
+            alt="Our Company - Surface411"
             src={"/industries/land-8.png"}
             className="rounded-lg overflow-x-hidden"
             height={450}

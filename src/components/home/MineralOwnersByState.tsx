@@ -46,7 +46,7 @@ export const MineralOwnersByState = memo(({ locations }: Props) => {
         >
           <Image
             src={"/assets/images/us.png"}
-            alt="Petro411 - USA flag"
+            alt="Surface411 - USA flag"
             className="rounded overflow-hidden"
             height={30}
             width={30}

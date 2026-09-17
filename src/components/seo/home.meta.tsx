@@ -15,7 +15,7 @@ interface SeoHeadProps {
 }
 
 /**
- * SeoHead — reusable Head component for Petro411 (Next.js Pages Router)
+ * SeoHead — reusable Head component for Surface411 (Next.js Pages Router)
  *
  * Usage (in pages/index.tsx):
  *
@@ -24,11 +24,11 @@ interface SeoHeadProps {
  * const faqs: FaqItem[] = [
  *   {
  *     question: "What membership plans are available?",
- *     answer: "Petro411 offers free and paid membership plans. Free users can search mineral owner records without contact details, while paid members get full access to phone numbers, emails, and addresses.",
+ *     answer: "Surface411 offers free and paid membership plans. Free users can search Surface owner records without contact details, while paid members get full access to phone numbers, emails, and addresses.",
  *   },
  *   {
  *     question: "What is this website about?",
- *     answer: "Petro411 is a mineral owner contact database built for the oil and gas industry, providing accurate contact information sourced from county property records.",
+ *     answer: "Surface411 is a Surface owner contact database built for the oil and gas industry, providing accurate contact information sourced from county property records.",
  *   },
  *   // ...add remaining FAQs
  * ];
@@ -43,32 +43,30 @@ interface SeoHeadProps {
  * }
  */
 export default function SeoHead({
-  title = "Mineral Owner Contact Database | Petro411",
-  description = "Find accurate, verified mineral owner contact info — phone, email & address — by county and state. Trusted by landmen and oil & gas pros. Search free.",
-  url = "https://www.petro411.com/",
+  title = "Surface Owner Contact Database | Surface411",
+  description = "Find accurate, verified Surface owner contact info — phone, email & address — by county and state. Trusted by landmen and oil & gas pros. Search free.",
+  url = "https://www.surface411.com/",
   faqs = [],
   allowIndexing = true,
 }: SeoHeadProps) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Petro411",
-    url: "https://www.petro411.com/",
-    logo: "https://www.petro411.com/logo-name.png",
+    name: "Surface411",
+    url: "https://www.surface411.com/",
+    logo: "https://www.surface411.com/logo-name.png",
     description:
-      "Petro411 provides accurate, secure mineral owner contact information nationwide for the oil and gas industry.",
-      sameAs:[
-        'https://www.linkedin.com/company/petro411/'
-      ]
+      "Surface411 provides accurate, secure Surface owner contact information nationwide for the oil and gas industry.",
+    sameAs: ["https://www.linkedin.com/company/Surface411/"],
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    url: "https://www.petro411.com/",
+    url: "https://www.surface411.com/",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://www.petro411.com/owners?state={search_term_string}",
+      target: "https://www.surface411.com/owners?state={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -113,9 +111,9 @@ export default function SeoHead({
       <meta property="og:url" content={url} />
       <meta
         property="og:image"
-        content="https://www.petro411.com/assets/cover-bg.png"
+        content="https://www.surface411.com/assets/cover-bg.png"
       />
-      <meta property="og:site_name" content="Petro411" />
+      <meta property="og:site_name" content="Surface411" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

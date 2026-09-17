@@ -152,7 +152,7 @@ const OwnerDetails = ({ owner }: Props) => {
   return (
     <>
     <Head>
-      <title>Petro411 | Mineral Owner - {owner?.names?.[0]}</title>
+      <title>Surface411 | Mineral Owner - {owner?.names?.[0]}</title>
       <meta
         name="robots"
         content={ "noindex, nofollow, noarchive, nosnippet"}
