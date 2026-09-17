@@ -8,15 +8,6 @@ const Logo = () => {
     <Link href={"/"} className="flex items-end flex-row">
       <Image
         className=""
-        src={"/logo-icon.png"}
-        alt="Surface411 - Logo icon"
-        title="Surface411 - Logo icon"
-        height={45}
-        width={45}
-        preload
-      />
-      <Image
-        className=""
         src={"/logo-name.png"}
         alt="Surface411 - Logo"
         title="Surface411 - Logo"
