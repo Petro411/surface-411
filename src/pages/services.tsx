@@ -1,3 +1,4 @@
+import SeoHeadServices from "@/components/seo/services.meta";
 import WhatDrives from "@/components/services/WhatDrives";
 import Testimonials from "@/components/home/Testimonials";
 import WithPetro from "@/components/services/WithPetro";
@@ -13,7 +14,6 @@ import { Flex } from "@radix-ui/themes";
 import { GetStaticProps } from "next";
 import { label } from "@/branding";
 import Head from "next/head";
-import React from "react";
 
 
 type Props = {
@@ -24,9 +24,7 @@ type Props = {
 const Services = ({ faqs, locations }: Props) => {
   return (
     <>
-      <Head>
-        <title>Services</title>
-      </Head>
+      <SeoHeadServices services={label.ServiceCards} faqs={faqs} />
       <SiteHeader />
       <PageHeader
         title="Services"

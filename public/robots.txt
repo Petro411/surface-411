@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /owners/*
+
+# Host
+Host: https://www.petro411.com
+
+# Sitemaps
+Sitemap: https://www.petro411.com/sitemap.xml

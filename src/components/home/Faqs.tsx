@@ -1,7 +1,9 @@
-import React, { memo } from "react";
-import Container from "../Container";
 import { ChevronDownIcon, Flex, Heading, Text } from "@radix-ui/themes";
 import * as Accordion from "@radix-ui/react-accordion";
+import { memo } from "react";
+
+import Container from "../Container";
+
 
 const Faqs = ({ faqs=[] }: any) => {
   return (
@@ -9,7 +11,7 @@ const Faqs = ({ faqs=[] }: any) => {
       {faqs?.length ? (
         <Container className="flex flex-col items-center gap-14 pb-20">
           <Flex direction={"column"} gap={"4"} align={"center"}>
-            <Heading size={"8"} className="text-center text-heading">
+            <Heading as={"h2"} size={"8"} className="text-center text-heading">
               FAQ
             </Heading>
           </Flex>

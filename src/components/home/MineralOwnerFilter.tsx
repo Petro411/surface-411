@@ -1,5 +1,5 @@
 import { Button, DropdownMenu, Flex, Heading, Text, TextField, } from "@radix-ui/themes";
-import React, { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
+import { ChangeEvent, memo, useCallback, useMemo, useState } from "react";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
 
@@ -7,7 +7,6 @@ import Container from "../Container";
 
 
 type Props = {
-  tabView?: boolean;
   title?: string;
   paragraph?: string;
   className?: string;
@@ -17,8 +16,7 @@ type Props = {
   locations: any[] | [];
 };
 
-const MineralOwnerFilter = ({
-  tabView = false,
+export const MineralOwnerFilter = ({
   title,
   paragraph,
   className,
@@ -27,14 +25,6 @@ const MineralOwnerFilter = ({
   onSubmit,
   locations,
 }: Props) => {
-  const router = useRouter();
-  const [form, setForm] = useState({
-    fName: "",
-    lName: "",
-    ml: "",
-    state: "",
-  });
-
   return (
     <Container>
       <MineralSearchForm
@@ -84,9 +74,9 @@ const MineralSearchForm = memo(
       [form]
     );
 
-    const selectedState = useMemo(() => { 
-      return locations?.find(item => item.code === form.state)?.name || ''
-    },[form.state]);
+    const selectedState = useMemo(() => {
+      return locations?.find((item) => item.code === form.state)?.name || "";
+    }, [form.state]);
 
     return (
       <div
@@ -95,7 +85,7 @@ const MineralSearchForm = memo(
         {title || paragraph ? (
           <Flex direction={"column"} gap={"1"}>
             {title && (
-              <Heading size={"6"} className="text-heading">
+              <Heading as={"h2"} size={"6"} className="text-heading">
                 {title}
               </Heading>
             )}
@@ -121,7 +111,11 @@ const MineralSearchForm = memo(
               value={form.name}
               onChange={handleOnChange}
             />
-            <TextField.Root size={"3"} className="w-full" placeholder="MI/Last Name" />
+            <TextField.Root
+              size={"3"}
+              className="w-full"
+              placeholder="MI/Last Name"
+            />
             <Flex className={`${dropDownClasses}`}>
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger className="!w-full">
@@ -206,4 +200,4 @@ const MineralSearchForm = memo(
   }
 );
 
-export default memo(MineralOwnerFilter);
+export default MineralOwnerFilter;

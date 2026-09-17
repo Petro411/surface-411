@@ -14,7 +14,7 @@ const JWT_SECRET = process.env.JWT_SECRET ?? "";
 
 async function handler(req: any, res: NextApiResponse) {
   try {
-    const { token, county } = req.query;
+    const { token, county, state } = req.query;
     if (!token || !county) {
       throw new HttpException("Unauthorized", 401);
     }
@@ -48,27 +48,15 @@ async function handler(req: any, res: NextApiResponse) {
         "You have reached your monthly download limit. Please upgrade or wait for reset."
       );
     }
-
+    const countiesNormalized = county?.replace(/\s*County\s*$/i, "").trim().toLowerCase();
     const list = await MineralOwner.find({
-      counties: {
-        $elemMatch: {
-          $regex: new RegExp(
-            `^${county?.replace(/\s*county\s*$/i, "").trim()}(\\s*county)?$`,
-            "i"
-          ),
-        },
-      },
-    });
+      "state.name": state,
+      countiesNormalized
+    }).select(['-_id','-__v','-countiesNormalized','-updatedAt','-createdAt']).lean();
 
     const listLength = await MineralOwner.countDocuments({
-      counties: {
-        $elemMatch: {
-          $regex: new RegExp(
-            `^${county?.replace(/\s*county\s*$/i, "").trim()}(\\s*county)?$`,
-            "i"
-          ),
-        },
-      },
+      "state.name": state,
+      countiesNormalized
     });
 
     if (!plan?.downloads_list?.find((item:any)=>item?.county?.toLowerCase()=== county?.toLowerCase())) {

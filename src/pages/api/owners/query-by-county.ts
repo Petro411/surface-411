@@ -6,21 +6,24 @@ import { label } from "@/branding";
 
 async function handler(req: any, res: NextApiResponse) {
     try {
-        const { name, page = 1, limit = 10 } = req.query;
+        const { county,state, page = 1, limit = 10 } = req.query;
 
         const pageNum = parseInt(page as string, 10) || 1;
         const limitNum = parseInt(limit as string, 10) || 10;
         const skip = (pageNum - 1) * limitNum;
 
         const query: any = {};
-        if (name && name.trim().length > 0) {
-            query.counties = { $elemMatch: { $regex: new RegExp(`^${name?.replace(/\s*county\s*$/i, "").trim()}(\\s*county)?$`, 'i') } };
+         if (state && state.trim().length > 0) {
+            query["state.name"] = state;
+        }
+        if (county && county.trim().length > 0) {
+            const normalizedName = county?.replace(/\s*County\s*$/i, "").trim().toLowerCase();
+            query.countiesNormalized = normalizedName;
         }
 
-         const sanitizedFilter = {
+        const sanitizedFilter = {
             ...query,
-            "counties.0": { $exists: true },
-            "state.code": { $exists: true },
+            "countiesNormalized.0": { $exists: true },
             "state.name": { $exists: true },
         };
 
@@ -28,7 +31,9 @@ async function handler(req: any, res: NextApiResponse) {
 
         const minerals = await MineralOwner.find(sanitizedFilter)
             .skip(skip)
-            .limit(limitNum);
+            .limit(limitNum)
+            .select(['-__v','-countiesNormalized'])
+            .lean();
 
         return res.status(200).json({
             success: true,
@@ -42,6 +47,7 @@ async function handler(req: any, res: NextApiResponse) {
         });
 
     } catch (error: any) {
+        console.log(error)
         return res.status(error?.statusCode ?? 500).json({
             success: false,
             status: error?.statusCode ?? 500,

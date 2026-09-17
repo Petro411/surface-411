@@ -6,19 +6,23 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <Link href={"/"} className="flex items-end flex-row">
-      {/* <Image
-      className=""
+      <Image
+        className=""
         src={"/logo-icon.png"}
-        alt="site-logo"
+        alt="Surface411 - Logo icon"
+        title="Surface411 - Logo icon"
         height={45}
         width={45}
-      /> */}
+        preload
+      />
       <Image
-      className=""
+        className=""
         src={"/logo-name.png"}
-        alt="site-logo"
+        alt="Surface411 - Logo"
+        title="Surface411 - Logo"
         height={155}
         width={155}
+        preload
       />
     </Link>
   );

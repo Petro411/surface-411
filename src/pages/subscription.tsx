@@ -1,11 +1,11 @@
 import { Button, Flex, Heading, Separator, Text } from "@radix-ui/themes";
 import GetApiErrorMessage from "@/utils/GetApiErrorMessage";
 import baseApi, { endpoints } from "@/services/api";
-import React, { useEffect, useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import Container from "@/components/Container";
 import { loadStripe } from "@stripe/stripe-js";
 import { getItem } from "@/utils/Localstorage";
+import { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 import withAuth from "@/utils/withAuth";
 import toast from "react-simple-toasts";
@@ -51,6 +51,10 @@ const Subscription = ({ plans }: any) => {
     <>
       <Head>
         <title>Subscription</title>
+        <meta
+        name="robots"
+        content={"noindex, nofollow, noarchive, nosnippet"}
+      />
       </Head>
       <PageHeader
         title="Subscription"

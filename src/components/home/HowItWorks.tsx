@@ -10,10 +10,10 @@ const HowItWorks = () => {
     <div className="py-24 gradientBg flex flex-col justify-center">
       <Container className="flex flex-col items-center gap-14">
         <Flex direction={"column"} gap={"4"} align={"center"}>
-          <Heading size={"8"} className="text-white text-center">
+          <Heading as={"h2"} size={"8"} className="text-white text-center">
             {label.HowItWorks}
           </Heading>
-          <Text size={"3"} className="text-white text-center lg:w-[60%]">
+          <Text as={"p"} size={"3"} className="text-white text-center lg:w-[60%]">
             {label.HowItWorksDes}
           </Text>
         </Flex>
@@ -30,7 +30,7 @@ const HowItWorks = () => {
               justify={"center"}
             >
               <span className="text-primary opacity-60 text-7xl 2xl:text-9xl font-bold absolute top-3 left-3">{index + 1}</span>
-              <Text className="!z-10 !text-white" size={"3"} weight={"medium"} >
+              <Text as={"p"} className="!z-10 !text-white" size={"3"} weight={"medium"} >
                 {item}
               </Text>
             </Flex>

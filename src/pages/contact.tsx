@@ -1,27 +1,20 @@
 import { Button, Flex, TextArea, TextField } from "@radix-ui/themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { PageHeader, Footer, SiteHeader } from "@/components";
 import GetApiErrorMessage from "@/utils/GetApiErrorMessage";
 import baseApi, { endpoints } from "@/services/api";
-import { useMutation } from "@/hooks/useMutation";
-import SiteHeader from "@/components/SiteHeader";
-import PageHeader from "@/components/PageHeader";
+import SeoHead from "@/components/seo/home.meta";
 import Container from "@/components/Container";
-import { useQuery } from "@/hooks/useQuery";
 import Faqs from "@/components/home/Faqs";
-import Footer from "@/components/Footer";
+import { useSendMessage } from "@/hooks";
 import toast from "react-simple-toasts";
+import React, { useState } from "react";
 import { GetStaticProps } from "next";
 import { label } from "@/branding";
 import Image from "next/image";
-import Head from "next/head";
 
 
-const ContactPage = () => {
-  const [faqs, setFaqs] = useState([]);
-
-  const getFaqsApi = useQuery(endpoints.getFaqs);
-
-  const { request, loading } = useMutation(endpoints.contact);
+const ContactPage = ({ faqs }: { faqs: any[] | [] }) => {
+  const { mutate, isPending } = useSendMessage();
 
   const [form, setForm] = useState({
     name: "",
@@ -41,32 +34,24 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      await request(form);
-      toast("Message submitted!");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      toast(GetApiErrorMessage(error));
-      console.error("Error submitting form:", error);
-    }
+    mutate(form, {
+      onSuccess: () => {
+        toast("Message submitted!");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      },
+      onError: (error) => toast(GetApiErrorMessage(error)),
+    });
   };
-
-  const fetchFaqs = useCallback(async () => {
-    try {
-      const res = await baseApi.get(endpoints.getFaqs);
-      setFaqs(res?.data?.faqs ?? []);
-    } catch (error) {}
-  }, [faqs]);
-  useEffect(() => {
-    fetchFaqs();
-  }, []);
 
   return (
     <>
-      <Head>
-        <title>Services</title>
-      </Head>
+      <SeoHead
+        title="Contact Us | Petro411"
+        description="Have questions or need assistance? Reach out to the Petro411 team for support, inquiries, or feedback. We're here to help you with your mineral owner data needs."
+        url="https://www.petro411.com/contact"
+        faqs={faqs}
+        allowIndexing={true}
+      />
       <SiteHeader />
       <PageHeader
         title={label.ContactUs}
@@ -76,12 +61,12 @@ const ContactPage = () => {
       />
       <Container>
         <div className="bg-white border shadow-lg mt-20 p-12 rounded-xl grid grid-cols-2 gap-10">
-           <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
             <Image
-            alt=";"
-            src={"/industries/contact.png"}
-            height={450}
-            width={450}
+              alt=";"
+              src={"/industries/contact.png"}
+              height={450}
+              width={450}
             />
           </div>
           <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
@@ -125,8 +110,8 @@ const ContactPage = () => {
               onChange={handleChange}
             />
             <Button
-              loading={loading}
-              disabled={loading}
+              loading={isPending}
+              disabled={isPending}
               size="3"
               className="!self-start !bg-btnPrimary"
               type="submit"
@@ -134,13 +119,10 @@ const ContactPage = () => {
               Submit
             </Button>
           </form>
-         
         </div>
-
       </Container>
 
       <Flex direction="column" gap="9" className="pt-20">
-        {/* <NewsLetter /> */}
         <Faqs faqs={faqs} />
       </Flex>
       <Footer />
@@ -150,13 +132,18 @@ const ContactPage = () => {
 
 export const getStaticProps: GetStaticProps<any> = async () => {
   try {
-    const res = await baseApi.get(endpoints.getFaqs);
+    const faqsQuery = await baseApi.get(endpoints.getFaqs);
     return {
-      props: {},
+      props: {
+        faqs: faqsQuery?.data?.faqs ?? [],
+      },
+      revalidate: 60,
     };
   } catch (error) {
     return {
-      props: {},
+      props: {
+        faqs: [],
+      },
     };
   }
 };

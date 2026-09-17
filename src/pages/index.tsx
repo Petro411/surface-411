@@ -1,18 +1,14 @@
-import MineralOwnersByState from "@/components/home/MineralOwnersByState";
-import MineralOwnerFilter from "@/components/home/MineralOwnerFilter";
+import { MineralOwnersByState, MineralOwnerFilter, Flex } from "@/components";
 import Testimonials from "@/components/home/Testimonials";
 import HowItWorks from "@/components/home/HowItWorks";
 import baseApi, { endpoints } from "@/services/api";
-import SiteHeader from "@/components/SiteHeader";
+import { Footer, SiteHeader } from "@/components";
+import SeoHead from "@/components/seo/home.meta";
 import NewsLetter from "@/components/NewsLetter";
 import Hero from "@/components/home/Hero";
 import Faqs from "@/components/home/Faqs";
-import Footer from "@/components/Footer";
-import { Flex } from "@radix-ui/themes";
 import { GetStaticProps } from "next";
 import { label } from "@/branding";
-import Head from "next/head";
-import React from "react";
 
 
 type Props = {
@@ -22,28 +18,28 @@ type Props = {
 
 const Home = ({ faqs, locations }: Props) => {
   return (
-    <main>
-      <Head>
-        <title>{label.SiteName}</title>
-      </Head>
-      <SiteHeader />
-      <Hero />
-      <MineralOwnerFilter
-        className="py-10 md:-translate-y-24"
-        title={label.SearchMineralOwners}
-        paragraph={label.FindMineralOwners}
-        dropDownClasses={"w-full lg:w-[180px]"}
-        locations={locations}
-      />
-      <Flex direction={"column"} gap={"9"}>
-        <MineralOwnersByState locations={locations} />
-        <HowItWorks />
-        <Testimonials />
-        <NewsLetter />
-        <Faqs faqs={faqs} />
-      </Flex>
-      <Footer />
-    </main>
+    <>
+      <SeoHead faqs={faqs} />
+      <main>
+        <SiteHeader />
+        <Hero />
+        <MineralOwnerFilter
+          className="py-10 md:-translate-y-24"
+          title={label.SearchMineralOwners}
+          paragraph={label.FindMineralOwners}
+          dropDownClasses={"w-full lg:w-[180px]"}
+          locations={locations}
+        />
+        <Flex direction={"column"} gap={"9"}>
+          <MineralOwnersByState locations={locations} />
+          <HowItWorks />
+          <Testimonials />
+          <NewsLetter />
+          <Faqs faqs={faqs} />
+        </Flex>
+        <Footer />
+      </main>
+    </>
   );
 };
 

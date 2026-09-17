@@ -5,7 +5,7 @@ import Location from "@/lib/mongodb/models/Location";
 async function handler(req: any, res: any) {
     try {
         const locations = await Location.find({ type: "state" })
-            .sort({ name: 1 }); // Sort A → Z by the "name" field
+            .sort({ name: 1 }).lean();
 
         return res.status(200).json({ locations, success: true });
     } catch (error: any) {

@@ -1,8 +1,7 @@
-import React, { ChangeEvent, FormEvent, memo, useCallback, useState } from "react";
+import { ChangeEvent, FormEvent, memo, useCallback, useState } from "react";
 import { Button, Flex, Heading, Text, TextField } from "@radix-ui/themes";
 import GetApiErrorMessage from "@/utils/GetApiErrorMessage";
-import { useMutation } from "@/hooks/useMutation";
-import { endpoints } from "@/services/api";
+import { useRegisterNewsLetter } from "@/hooks";
 import toast from "react-simple-toasts";
 import { label } from "@/branding";
 import Image from "next/image";
@@ -11,8 +10,7 @@ import Container from "./Container";
 
 
 const NewsLetter = () => {
-
-  const {request,loading} = useMutation(endpoints.registerEmail);
+  const { mutate, isPending } = useRegisterNewsLetter();
 
   const [form, setForm] = useState({
     name: "",
@@ -27,28 +25,33 @@ const NewsLetter = () => {
     [form]
   );
 
-  const handleOnSubmit = async (e:FormEvent)=>{
-    try {
-      e.preventDefault();
-      const res = await request(form);
-      toast(res?.message ?? "Successfull.")
-      setForm({email:"",name:""})
-    } catch (error) {
-      toast(GetApiErrorMessage(error));
-    }
-  }
+  const handleOnSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    mutate(form, {
+      onSuccess: () => {
+        toast("Email registered for newsletter.");
+        setForm({ name: "", email: "" });
+      },
+      onError: (e) => toast(GetApiErrorMessage(e)),
+    });
+  };
 
   return (
     <Container>
       <div className="grid grid-cols-1 lg:grid-cols-2 gradientBg rounded-xl gap-12 2xl:gap-0 overflow-hidden border items-center">
         <div className="flex flex-col gap-8 text-white p-8 sm:p-12 2xl:p-16">
-          <Heading size={"8"}>{label.StayInLoop}</Heading>
+          <Heading as={"h2"} size={"8"}>
+            {label.StayInLoop}
+          </Heading>
           <Flex direction={"column"} gap={"4"}>
-            <Text size={"3"}>
+            <Text as={"p"} size={"3"}>
               {label.StayInLoopDes}
             </Text>
           </Flex>
-          <form className="flex flex-col gap-5 2xl:w-[70%] newsLetterFrom" onSubmit={handleOnSubmit}>
+          <form
+            className="flex flex-col gap-5 2xl:w-[70%] newsLetterFrom"
+            onSubmit={handleOnSubmit}
+          >
             <TextField.Root
               name="name"
               minLength={3}
@@ -70,8 +73,8 @@ const NewsLetter = () => {
               placeholder="Email address"
             />
             <Button
-            loading={loading}
-            disabled={loading}
+              loading={isPending}
+              disabled={isPending}
               className="!self-start !mt-5 !bg-primary !cursor-pointer !text-white hover:!bg-primary group"
               size={"4"}
             >
@@ -84,7 +87,7 @@ const NewsLetter = () => {
         <div className={`h-full`}>
           <Image
             src={"/assets/images/newsletter.jpg"}
-            alt=""
+            alt="Petro411 - Stay in the loop with our newsletter"
             className="h-full w-full object-cover"
             height={400}
             width={400}

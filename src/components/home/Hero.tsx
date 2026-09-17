@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={`gradientBg text-white`}>
       <Container className="min-h-[60vh] items-center justify-center flex flex-col text-center gap-4">
         <h1 className="text-4xl md:text-5xl font-bold">{label.YourMineralOwners}</h1>
-        <Text size={"3"} className="w-full md:w-[80%] lg:w-[60%]">
+        <Text as={"p"} size={"3"} className="w-full md:w-[80%] lg:w-[60%]">
           {label.SimplifiesLandAcquisition}
         </Text>
       </Container>

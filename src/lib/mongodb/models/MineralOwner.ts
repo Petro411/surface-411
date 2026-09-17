@@ -16,7 +16,8 @@ export interface IMineralOwner extends Document {
     description: string;
     state: State;
     city: string;
-    ownerState: State
+    ownerState: State;
+    countiesNormalized:string[]
 }
 
 const StateSchema: Schema<State> = new Schema({
@@ -25,7 +26,7 @@ const StateSchema: Schema<State> = new Schema({
 }, { _id: false });
 
 const MineralOwnerSchema = new Schema<IMineralOwner>({
-    names: [{type: String}],
+    names: [{ type: String }],
     emails: [{ type: String, }],
     numbers: [{ type: String, }],
     addresses: [{ type: String }],
@@ -34,10 +35,14 @@ const MineralOwnerSchema = new Schema<IMineralOwner>({
     description: { type: String, },
     city: { type: String, },
     state: { type: StateSchema },
-    ownerState: { type: StateSchema }
+    ownerState: { type: StateSchema },
+    countiesNormalized:[{type:String}]
 }, {
     timestamps: true
 });
+
+MineralOwnerSchema.index({countiesNormalized:1})
+MineralOwnerSchema.index({"state.code":1})
 
 const MineralOwner = models.MineralOwner || model<IMineralOwner>('MineralOwner', MineralOwnerSchema);
 

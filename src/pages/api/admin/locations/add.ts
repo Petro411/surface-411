@@ -17,7 +17,7 @@ const handler = async (req: any, res: any) => {
             cleanName = name.replace(/\s*County\s*$/i, "").trim();
         }
 
-        const checkDublicate = await Location.findOne({ name: type === "state" ? { $regex: new RegExp(`^${cleanName}\\s*(state)?$`, 'i') } : { $regex: new RegExp(`^${cleanName}\\s*(county)?$`, 'i') } });
+        const checkDublicate = await Location.findOne({ name: type === "state" ? { $regex: new RegExp(`^${cleanName}\\s*(state)?$`, 'i') } : { $regex: new RegExp(`^${cleanName}\\s*(County)?$`, 'i') } });
 
         if (checkDublicate) {
             throw new Error(`${type === "state" ? "State" : "County"} with this name already exists`)

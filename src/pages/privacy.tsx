@@ -1,12 +1,12 @@
-import Container from "@/components/Container";
-import Footer from "@/components/Footer";
-import PageHeader from "@/components/PageHeader";
-import SiteHeader from "@/components/SiteHeader";
+import SeoHeadLegal from "@/components/seo/privacy.meta";
 import { dbConnect } from "@/lib/mongodb/dbConnect";
+import SiteHeader from "@/components/SiteHeader";
+import PageHeader from "@/components/PageHeader";
+import Container from "@/components/Container";
 import Page from "@/lib/mongodb/models/Page";
+import Footer from "@/components/Footer";
 import { GetStaticProps } from "next";
-import Head from "next/head";
-import React from "react";
+
 
 type Props = {
   content: any;
@@ -15,9 +15,10 @@ type Props = {
 const Privacy = ({ content }: Props) => {
   return (
     <>
-      <Head>
-        <title>Privacy Policy</title>
-      </Head>
+     <SeoHeadLegal
+     page="privacy"
+     content={content}
+     />
       <SiteHeader />
       <PageHeader
         title="Privacy Policy"

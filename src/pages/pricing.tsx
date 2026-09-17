@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
@@ -8,11 +8,11 @@ import baseApi, { endpoints } from "@/services/api";
 import { getItem } from "@/utils/Localstorage";
 import { Flex, Heading, Separator, Text } from "@radix-ui/themes";
 import { GetStaticProps } from "next";
-import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import PayPalButton from "@/components/dashboard/PaypalButton";
+import { useEffect, useState } from "react";
 import { label } from "@/branding";
+import SeoHeadPricing from "@/components/seo/pricing.meta";
+import Link from "next/link";
 
 const Pricing = ({ plans }: any) => {
   const router = useRouter();
@@ -35,16 +35,11 @@ const Pricing = ({ plans }: any) => {
 
   return (
     <>
-      <Head>
-        <title>Pricing</title>
-      </Head>
+      <SeoHeadPricing plans={plans} />
       <SiteHeader />
-      <PageHeader
-        title="Pricing"
-        description={label.SubscriptionPageDesc}
-      />
+      <PageHeader title="Pricing" description={label.SubscriptionPageDesc} />
       <Container>
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 2xl:w-10/12 mx-auto gap-5">
+        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-5">
           {plans?.map((item: any, index: number) => (
             <Flex
               key={index}
@@ -53,13 +48,13 @@ const Pricing = ({ plans }: any) => {
                 item?.recommended ? "bg-blue-500/5 border-yellow" : ""
               }`}
             >
-              <Heading size={"4"} align={"left"} className="mb-5">
+              <Heading as="h2" size={"4"} align={"left"} className="mb-5">
                 {item?.title}
               </Heading>
-              <Heading size={"8"} align={"left"} className="mb-2">
+              <Heading as="h3" size={"8"} align={"left"} className="mb-2">
                 ${item?.amount}
               </Heading>
-              <Heading size={"3"} color="gray" align={"left"}>
+              <Heading as="h4" size={"3"} color="gray" align={"left"}>
                 {item?.subtitle}
               </Heading>
 
@@ -75,24 +70,7 @@ const Pricing = ({ plans }: any) => {
                 Buy
               </button>
 
-              {/* PayPal button only if logged in */}
-              {isLoggedIn && (
-                <div className="!mt-3">
-                  <PayPalButton
-                    plan={{
-                      _id: item._id,
-                      priceId: item.priceId,
-                      amount: item.amount,
-                      title: item.title,
-                    }}
-                    onSuccess={() => {
-                      router.push("/dashboard");
-                    }}
-                  />
-                </div>
-              )}
-
-              <Heading size={"3"} color="gray" className="mt-5 mb-1">
+              <Heading as="h5" size={"3"} color="gray" className="mt-5 mb-1">
                 Features
               </Heading>
               <Separator className="!w-full mb-2" />
@@ -106,11 +84,30 @@ const Pricing = ({ plans }: any) => {
               ))}
               <Separator className="!w-full mt-2" />
 
-              <Text size={"3"} color="gray" className="mt-3">
+              <Text as="p" size={"3"} color="gray" className="mt-3">
                 {item?.description}
               </Text>
             </Flex>
           ))}
+          <Flex
+            direction={"column"}
+            className={`h-fit border rounded-xl p-6`}
+          >
+            <Heading as="h2" size={"4"} align={"left"} className="mb-2">
+              Custome Order
+            </Heading>
+            <Text as="p" size={"3"} color="gray" className="">
+              Need something tailored to your specific requirements? Contact us
+              with your details and we'll create a custom plan just for you.
+            </Text>
+
+            <Link
+              href={"/contact"}
+              className={`!mt-5 !border rounded-xl py-3 text-center !border-primary !bg-transparent !text-black hover:!bg-primary hover:!text-white`}
+            >
+              Contact Us
+            </Link>
+          </Flex>
         </div>
       </Container>
       <Footer />

@@ -10,10 +10,10 @@ const WhatDrives = () => {
   return (
     <Container>
       <Flex direction={"column"} gap={"4"} align={"center"}>
-        <Heading size={"8"} className=" text-center text-heading">
+        <Heading as="h2" size={"8"} className=" text-center text-heading">
           What Drives Us
         </Heading>
-        <Text size={"4"} className=" text-center lg:w-[60%]">
+        <Text as="p" size={"4"} className=" text-center lg:w-[60%]">
           {label.WhatDrivesUsDesc}
         </Text>
       </Flex>

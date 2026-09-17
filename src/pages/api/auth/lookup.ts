@@ -35,7 +35,6 @@ const handler = async (req: any, res: any) => {
 
     return res.status(200).json({ user });
   } catch (error: any) {
-    console.log(error)
     return res.status(error?.statusCode ?? 500).json({
       success: false,
       status: error?.statusCode ?? 500,

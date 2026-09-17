@@ -16,7 +16,7 @@ const Testimonials = () => {
   return (
     <Container className="flex flex-col items-center gap-10 py-14">
       <Flex direction={"column"} gap={"4"} align={"center"}>
-        <Heading size={"8"} className="text-center text-heading">
+        <Heading as={"h2"} size={"8"} className="text-center text-heading">
           Testimonials
         </Heading>
       </Flex>
@@ -70,14 +70,14 @@ const Testimonials = () => {
               <Flex direction={"column"} gap={"3"}>
                 <div className="h-20 w-20 rounded-xl overflow-hidden mx-auto">
                   <Image
-                    alt=""
+                    alt={`${item.name} profile image`}
                     src={item.image}
                     className="w-full h-full object-cover"
                     width={100}
                     height={100}
                   />
                 </div>
-                <Heading size={"4"}>{item.name}</Heading>
+                <Heading as="h3" size={"4"}>{item.name}</Heading>
               </Flex>
             </div>
           </SwiperSlide>

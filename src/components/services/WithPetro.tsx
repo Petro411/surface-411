@@ -15,10 +15,10 @@ const WithPetro = ({ locations }: Props) => {
     <div className="py-24 gradientBg flex flex-col gap-14">
       <Container>
         <Flex direction={"column"} gap={"4"} align={"center"}>
-          <Heading size={"8"} className="text-white text-center">
+          <Heading as="h2" size={"8"} className="text-white text-center">
             {label.WithBrandName}
           </Heading>
-          <Text size={"4"} className="text-white text-center lg:w-[60%]">
+          <Text as="p" size={"4"} className="text-white text-center lg:w-[60%]">
             {label.WithBrandDes}
           </Text>
         </Flex>
@@ -30,7 +30,7 @@ const WithPetro = ({ locations }: Props) => {
         locations={locations}
       />
       <Container>
-        <Heading size={"6"} className="text-white text-center">
+        <Heading as="h3" size={"6"} className="text-white text-center">
           {label.FindTheMineralData}
         </Heading>
       </Container>

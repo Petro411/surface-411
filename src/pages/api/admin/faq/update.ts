@@ -21,4 +21,4 @@ const handler = async (req: any, res: any) => {
         })
     }
 }
-export default withCors(withAuth(withMethod(handler, ['POST'])));
+export default withCors(withAuth(withMethod(handler, ['PUT'])));

@@ -1,36 +1,28 @@
-import React, { memo, ReactNode, useMemo } from "react";
-import SiteHeader from "../SiteHeader";
-import Container from "../Container";
-import { Avatar, Flex, Heading, Separator, Text } from "@radix-ui/themes";
-import { getUser } from "@/context/AuthContext";
-import { useRouter } from "next/router";
-import { DashboardRoutes } from "@/config/DashboardRoutes";
-import Link from "next/link";
-import toast from "react-simple-toasts";
+import { Avatar, Flex, Separator, Text } from "@radix-ui/themes";
 import GetApiErrorMessage from "@/utils/GetApiErrorMessage";
 import { PinLeftIcon } from "@radix-ui/react-icons";
 import { deleteItem } from "@/utils/Localstorage";
-import baseApi, { endpoints } from "@/services/api";
+import { getUser } from "@/context/AuthContext";
+import toast from "react-simple-toasts";
+import { useRouter } from "next/router";
+import { memo, ReactNode } from "react";
+import { destroyCookie } from "nookies";
+
+import SiteHeader from "../SiteHeader";
+import Container from "../Container";
+
 
 type Props = {
-  hideTitle?: boolean;
   children?: ReactNode;
 };
 
-const Layout = ({ children, hideTitle }: Props) => {
+const Layout = ({ children }: Props) => {
   const userContext = getUser();
   const user = userContext?.user ?? null;
   const router = useRouter();
-  const activePath = router.pathname;
-  const activeTabTitle = useMemo(() => {
-    return (
-      DashboardRoutes.find((item) => item.path === activePath)?.title ?? ""
-    );
-  }, [activePath]);
-
   const handleLogout = async () => {
     try {
-      await baseApi.get(endpoints.logout);
+      destroyCookie(null, "token", { path: "/" });
       deleteItem("token");
       router.push("/auth/login");
       userContext?.setUser(null);
@@ -45,7 +37,7 @@ const Layout = ({ children, hideTitle }: Props) => {
       <SiteHeader />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 mt-8 gap-10">
-          <div className="!hidden lg:!block overflow-hidden lg:col-span-4 xl:col-span-3 h-fit border rounded-xl sticky top-0">
+          <div className="overflow-hidden lg:col-span-4 xl:col-span-3 h-fit border rounded-xl md:sticky top-16">
             <Flex
               direction={"row"}
               align={"center"}
@@ -70,44 +62,17 @@ const Layout = ({ children, hideTitle }: Props) => {
             </Flex>
 
             <Separator size={"4"} orientation={"horizontal"} />
-
-            <Flex direction={"column"} py={"3"}>
-              {DashboardRoutes.map((tab, index) => (
-                <Link
-                  href={tab.path}
-                  key={index}
-                  className={`flex flex-row items-center gap-3 py-3 px-3 border-l-[3px] transition-all duration-300  ${
-                    tab.path === activePath
-                      ? "border-primary text-primary"
-                      : "border-transparent"
-                  } hover:!text-primary`}
-                >
-                  {tab.icon}
-                  <Text size={"2"}>{tab.title}</Text>
-                </Link>
-              ))}
-
-              <button
-                onClick={handleLogout}
-                className={`outline-none flex flex-row items-center gap-3 py-3 px-3 border-l-[3px] transition-all duration-300
+            <button
+              onClick={handleLogout}
+              className={`outline-none flex flex-row items-center gap-3 py-3 px-3 border-l-[3px] transition-all duration-300
                     border-transparent
                    hover:!text-primary`}
-              >
-                <PinLeftIcon height={20} width={20} />
-                <Text size={"2"}>Logout</Text>
-              </button>
-            </Flex>
+            >
+              <PinLeftIcon height={20} width={20} />
+              <Text size={"2"}>Logout</Text>
+            </button>
           </div>
-          <div className="lg:col-span-8 xl:col-span-9 h-fit">
-            {hideTitle ? (
-              ""
-            ) : (
-              <Heading size={"5"} mb={"2"}>
-                {activeTabTitle}
-              </Heading>
-            )}
-            {children}
-          </div>
+          <div className="lg:col-span-8 xl:col-span-9 h-fit">{children}</div>
         </div>
       </Container>
     </>

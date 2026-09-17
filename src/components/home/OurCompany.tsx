@@ -12,11 +12,11 @@ const OurCompany = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
         
         <div className="flex flex-col gap-4 order-2 lg:order-1">
-          <Heading size={"8"} className="text-heading">
+          <Heading as="h2" size={"8"} className="text-heading">
             {label.OurCompany}
           </Heading>
           <div className="flex flex-col gap-4 mt-5">
-            <Text size={"3"} color="gray">
+            <Text as="p" size={"3"} color="gray">
             {label.TeamHasTheRequired}
             </Text>
           </div>
@@ -24,7 +24,7 @@ const OurCompany = () => {
 
         <div className="flex flex-row order-1 lg:order-2 justify-center lg:justify-end">
           <Image
-            alt="alt"
+            alt="Our Company - Petro411"
             src={"/industries/land-8.png"}
             className="rounded-lg overflow-x-hidden"
             height={450}

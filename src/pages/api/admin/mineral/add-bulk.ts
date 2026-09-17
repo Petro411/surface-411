@@ -63,7 +63,9 @@ function mapToMineralOwnerSchema(row: any, fallback: { state?: any; counties?: s
     ].filter(Boolean),
 
     counties: rowCounties.length > 0 ? rowCounties : (fallback.counties ?? []),
-
+    countiesNormalized: rowCounties.length > 0 ? rowCounties?.map((c: string) =>
+      c.replace(/\s*County\s*$/i, "").trim().toLowerCase()
+    ) : [],
     zipcode: safeTrim(cleanRow["addr_zip"]),
     description: safeTrim(cleanRow["legal_description"]),
     city: safeTrim(cleanRow["addr_city"]),

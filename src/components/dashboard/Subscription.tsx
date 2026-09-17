@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Badge,
   Button,
   Flex,
   Heading,
@@ -15,7 +14,6 @@ import { getUser } from "@/context/AuthContext";
 import { loadStripe } from "@stripe/stripe-js";
 import { getItem } from "@/utils/Localstorage";
 import toast from "react-simple-toasts";
-import PayPalButton from "./PaypalButton";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY ?? ""
@@ -281,11 +279,6 @@ const CheckoutButton = memo(({ item }: any) => {
               >
                 Sripe
               </Button>
-
-              {/* PayPal option */}
-              <div className="w-full">
-                <PayPalButton plan={item} />
-              </div>
             </div>
 
             <Button

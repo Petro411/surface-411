@@ -1,3 +1,4 @@
+import SeoHeadLegal from "@/components/seo/privacy.meta";
 import { dbConnect } from "@/lib/mongodb/dbConnect";
 import SiteHeader from "@/components/SiteHeader";
 import PageHeader from "@/components/PageHeader";
@@ -5,8 +6,6 @@ import Container from "@/components/Container";
 import Page from "@/lib/mongodb/models/Page";
 import Footer from "@/components/Footer";
 import { GetStaticProps } from "next";
-import Head from "next/head";
-import React from "react";
 
 
 type Props = {
@@ -15,9 +14,10 @@ type Props = {
 const Terms = ({ content }: Props) => {
   return (
     <>
-      <Head>
-        <title>Terms of use</title>
-      </Head>
+      <SeoHeadLegal
+          page="terms"
+          content={content}
+          />
       <SiteHeader />
       <PageHeader
         title="Terms of use"

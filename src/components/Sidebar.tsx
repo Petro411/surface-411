@@ -1,10 +1,10 @@
-import { memo, useEffect } from "react";
-import { homeRoutes } from "@/config/HomeRoutes";
 import { Cross1Icon } from "@radix-ui/react-icons";
-import { Flex, Text } from "@radix-ui/themes";
-import Link from "next/link";
+import { homeRoutes } from "@/config/HomeRoutes";
 import { getUser } from "@/context/AuthContext";
-import { DashboardRoutes } from "@/config/DashboardRoutes";
+import { Flex, Text } from "@radix-ui/themes";
+import { memo, useEffect } from "react";
+import Link from "next/link";
+
 
 type Props = {
   visible: boolean;
@@ -69,7 +69,7 @@ const Sidebar = ({ visible, setVisible }: Props) => {
             </Link>
           </li>
         ))}
-        {user &&
+        {/* {user &&
           DashboardRoutes.map((tab, index) => (
             <li key={index} className="text-center !block lg:!hidden">
               <Link href={tab.path} className="!text-white">
@@ -78,7 +78,7 @@ const Sidebar = ({ visible, setVisible }: Props) => {
                 </Text>
               </Link>
             </li>
-          ))}
+          ))} */}
         {!user && (
           <li>
             <Flex

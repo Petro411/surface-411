@@ -1,14 +1,19 @@
-import { withAuth } from "@/lib/middlewares/withAuth";
-import { withCors } from "@/lib/middlewares/withCors";
-import { withMethod } from "@/lib/middlewares/withMethod";
 import { withRoleAuth } from "@/lib/middlewares/withRoleAuth";
 import MineralOwner from "@/lib/mongodb/models/MineralOwner";
+import { withMethod } from "@/lib/middlewares/withMethod";
+import { withCors } from "@/lib/middlewares/withCors";
+import { withAuth } from "@/lib/middlewares/withAuth";
 
 
 const handler = async (req: any, res: any) => {
     try {
 
-        const data = await MineralOwner.create(req.body);
+        const data = await MineralOwner.create({
+            ...req.body,
+            countiesNormalized: req.body?.counties.map((c: string) =>
+                c.replace(/\s*County\s*$/i, "").trim().toLowerCase()
+            )
+        });
 
         return res.status(200).json({
             data,

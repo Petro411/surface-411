@@ -40,7 +40,7 @@ const baseApi = axios.create({
 baseApi.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error("Axios error:", error.response?.data || error.message);
+    // console.error("Axios error:", error.response?.data || error.message);
     return Promise.reject(error);
   }
 );
@@ -59,6 +59,7 @@ export const endpoints = {
   verifyOtp: "/auth/verify-otp",
   queryOwners: "/owners/query-owners",
   ownerDetails: "/owners",
+  getOwnerIds:"/owners/get-owners-ids",
   getFaqs: "/faqs",
   getLocations: "/locations",
   contact:"/contact",
@@ -70,6 +71,7 @@ export const endpoints = {
     createPayPalOrder: "/paypal/create-order",
   capturePayPalOrder: "/paypal/capture-order",
   updateDownloadLimit: "/owners/download-list",
+  locationsList:"/locations-list"
 }
 
 export default baseApi;

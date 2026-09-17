@@ -1,17 +1,21 @@
-import Layout from "@/components/dashboard/Layout";
-import ChangeEmailForm from "@/components/settings/ChangeEmailForm";
 import ChangePassworForm from "@/components/settings/ChangePasswordForm";
+import ChangeEmailForm from "@/components/settings/ChangeEmailForm";
+import Layout from "@/components/dashboard/Layout";
+import { GetServerSideProps } from "next";
 import withAuth from "@/utils/withAuth";
 import { Tabs } from "@radix-ui/themes";
-import { GetServerSideProps } from "next";
 import Head from "next/head";
-import React from "react";
+
 
 const Settings = () => {
   return (
     <>
       <Head>
         <title>Settings</title>
+        <meta
+          name="robots"
+          content={"noindex, nofollow, noarchive, nosnippet"}
+        />
       </Head>
       <Layout>
         <Tabs.Root defaultValue="email">
@@ -22,13 +26,12 @@ const Settings = () => {
 
           <div className="pt-8">
             <Tabs.Content value="email">
-              <ChangeEmailForm/>
+              <ChangeEmailForm />
             </Tabs.Content>
 
             <Tabs.Content value="password">
-              <ChangePassworForm/>
+              <ChangePassworForm />
             </Tabs.Content>
-
           </div>
         </Tabs.Root>
       </Layout>

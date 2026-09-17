@@ -1,11 +1,9 @@
 import { Heading, Text } from "@radix-ui/themes";
-import React, { memo, ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import Image from "next/image";
 
 import Container from "./Container";
 
-
-const imageFirstClassName = "lg:order-1 order-2";
 
 type Props = {
   title?: string;
@@ -32,19 +30,19 @@ const TextImageColumn = ({
             imageFirst ? "lg:order-2 order-1" : ""
           }`}
         >
-          <Heading size={"8"} className="!text-heading">{title}</Heading>
+          <Heading as="h2" size={"8"} className="!text-heading">{title}</Heading>
           <div className="flex flex-col gap-4 mt-5">
             {children ? (
               children
             ) : (
               <>
                 {text1 && (
-                  <Text size={"3"} color="gray">
+                  <Text as="p" size={"3"} color="gray">
                     {text1}
                   </Text>
                 )}
                 {text2 && (
-                  <Text size={"3"} color="gray">
+                  <Text as="p" size={"3"} color="gray">
                     {text2}
                   </Text>
                 )}
@@ -58,7 +56,7 @@ const TextImageColumn = ({
           }`}
         >
           <Image
-            alt=""
+            alt={title ? `${title} - Petro411` : "Petro411"}
             src={image ? image : "/assets/images/empty-img.jpg"}
             height={450}
             className="rounded-lg overflow-x-hidden"

@@ -1,9 +1,10 @@
 import { Button, Flex, Separator, Text, TextField } from "@radix-ui/themes";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
-import React, { ChangeEvent, useEffect, useState } from "react";
 import GetApiErrorMessage from "@/utils/GetApiErrorMessage";
+import { ChangeEvent, useEffect, useState } from "react";
 import GoogleAuth from "@/components/auth/GoogleAuth";
 import AuthLayout from "@/components/auth/AuthLayout";
+import SeoHeadAuth from "@/components/seo/auth.meta";
 import { useMutation } from "@/hooks/useMutation";
 import { setItem } from "@/utils/Localstorage";
 import { endpoints } from "@/services/api";
@@ -14,7 +15,6 @@ import withApp from "@/utils/withApp";
 import { setCookie } from "nookies";
 import { label } from "@/branding";
 import Link from "next/link";
-import Head from "next/head";
 
 
 const Login = () => {
@@ -57,9 +57,7 @@ const Login = () => {
 
   return (
     <>
-      <Head>
-        <title>Login</title>
-      </Head>
+     <SeoHeadAuth page="login" />
       <AuthLayout title={label.Login}>
         <form className="flex flex-col gap-5 mt-5" onSubmit={handleSubmit}>
           <TextField.Root

@@ -10,9 +10,8 @@ async function handler(req: any, res: any) {
       page = 1,
       limit = 10,
       name,
-      stateName,
       stateCode,
-      counties,
+      county,
     } = req.query;
 
     page = parseInt(page, 10);
@@ -33,12 +32,11 @@ async function handler(req: any, res: any) {
       filter["state.code"] = { $regex: stateCode, $options: "i" };
     }
 
-    if (counties) {
-      const countiesArray = Array.isArray(counties)
-        ? counties
-        : counties.split(",");
-
-      filter.counties = { $in: countiesArray };
+    if (county) {
+      const countyName = county.replace(/county/i, '').trim();
+      filter.counties = {
+        $regex: new RegExp(`^${countyName}\\s*(County)?$`, 'i')
+      };
     }
 
     const sanitizedFilter = {
@@ -62,6 +60,8 @@ async function handler(req: any, res: any) {
       page,
       limit,
       success: true,
+
+      sanitizedFilter,
     });
   } catch (error: any) {
     return res.status(error?.statusCode ?? 500).json({

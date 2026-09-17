@@ -12,7 +12,7 @@ async function handler(req: any, res: NextApiResponse) {
             throw new HttpException(label.SomethingWentWrong, 500);
         }
  
-        const owner = await MineralOwner.findById(id);
+        const owner = await MineralOwner.findById(id).lean();
 
         return res.status(200).json({ owner });
 

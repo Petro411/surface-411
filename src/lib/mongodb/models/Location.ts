@@ -1,5 +1,6 @@
 import { Document, Schema, model, models } from 'mongoose';
 
+
 export interface ILocation extends Document {
   name: string;
   code: string;
@@ -7,7 +8,8 @@ export interface ILocation extends Document {
   state: {
     name: string,
     code: string
-  }
+  },
+  taxYear:string
 }
 
 const LocationSchema = new Schema<ILocation>({
@@ -17,7 +19,8 @@ const LocationSchema = new Schema<ILocation>({
   state: {
     name: String,
     code: String
-  }
+  },
+  taxYear:{type:String}
 });
 
 export default models.Location || model<ILocation>('Location', LocationSchema);
