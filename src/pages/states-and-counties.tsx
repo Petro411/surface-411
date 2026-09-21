@@ -26,7 +26,7 @@ const StatesAndCounties = ({ locations }: Props) => {
         description="Select a state to explore its counties and access detailed mineral owner records, including ownership data and verified contact information for individuals and companies across the U.S."
       />
       <Container>
-        <div className="grid grid-cols-4 gap-5 py-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 py-10">
           {sortLocations(locations)?.map((state, si) => (
             <div key={si} className="">
               <Link href={`/owners?state=${state.code}`} className="group">

@@ -16,6 +16,10 @@ export const homeRoutes=[
         path:"/pricing"
     },
     {
+        name:"Coverage",
+        path:"/states-and-counties"
+    },
+    {
         name:"Contact",
         path:"/contact"
     }
