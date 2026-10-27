@@ -443,9 +443,6 @@ const LockedSection = memo(({ user }: LockedSectionProps) => (
         className="bg-primary rounded-lg w-fit flex flex-row items-center justify-center gap-2 px-3 py-1.5 text-white"
       >
         {!user ? <PersonIcon /> : !user?.subscription ? <LockClosedIcon /> : ""}
-        {/* <Text>
-          {!user ? "Login" : !user?.subscription ? "Upgrade plan" : ""}
-        </Text> */}
       </Link>
     </div>
     <span>example@gmail.com</span>

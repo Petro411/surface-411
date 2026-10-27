@@ -59,7 +59,7 @@ export const useOwnersByCounty =(params:{
         limit:number
     })=>{
     return useQuery({
-        queryKey:[`owners-in-${params?.state||""}-${params?.county}||""`],
-        queryFn:()=>service.getOwnersByCounty(params)
+        queryKey:[`owners-in-${params?.state||""}-${params?.county}||""`, params.page],
+        queryFn:()=>service.getOwnersByCounty(params),
     })
 }

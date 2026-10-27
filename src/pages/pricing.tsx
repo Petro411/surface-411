@@ -94,7 +94,7 @@ const Pricing = ({ plans }: any) => {
             className={`h-fit border rounded-xl p-6`}
           >
             <Heading as="h2" size={"4"} align={"left"} className="mb-2">
-              Custome Order
+              Custom Order
             </Heading>
             <Text as="p" size={"3"} color="gray" className="">
               Need something tailored to your specific requirements? Contact us

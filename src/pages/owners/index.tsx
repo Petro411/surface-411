@@ -69,7 +69,6 @@ const Owners = ({
           <Text as={"p"} size={"3"} className="w-full md:w-[80%] lg:w-[60%]">
             Search by first name, last name, state, or county to locate
             ownership records across the U.S.
-            {/* {label.SimplifiesLandAcquisition} */}
           </Text>
         </Container>
       </div>

@@ -105,7 +105,7 @@ const MineralSearchForm = memo(
             <TextField.Root
               size={"3"}
               className="w-full"
-              placeholder="First Name/Company name"
+              placeholder="First Name/MI"
               name="name"
               id="name"
               value={form.name}
@@ -114,7 +114,7 @@ const MineralSearchForm = memo(
             <TextField.Root
               size={"3"}
               className="w-full"
-              placeholder="MI/Last Name"
+              placeholder="Last Name/Company"
             />
             <Flex className={`${dropDownClasses}`}>
               <DropdownMenu.Root>

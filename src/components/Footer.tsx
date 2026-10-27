@@ -47,11 +47,11 @@ export const Footer = () => {
             </ul>
           </div>
         </Container>
-        <div className="pt-8 flex flex-col items-center justify-center">
+        <div className="pt-8 flex flex-col items-center justify-center relative overflow-hidden">
           <Text as="p" className="px-6 text-sm" align={"center"}>
             {label.CopyRight}
           </Text>
-          {/* <Text as="p" className="px-6 text-xs mt-1" align={"center"}>
+          <Text as="p" className="px-6 text-xs mt-1 absolute -bottom-20" align={"center"}>
             Developed by{" "}
             <Link
               href="https://hasnainalam.com"
@@ -62,7 +62,7 @@ export const Footer = () => {
             >
               Hasnain Alam
             </Link>
-          </Text> */}
+          </Text>
         </div>
       </footer>
     </>
