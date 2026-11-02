@@ -10,7 +10,7 @@ async function handler(req: any, res: NextApiResponse) {
 
     try {
         await dbConnect();
-        const { state, name, lName, page = '1', limit = '10', county = '' } = req.query;
+        const { state, name, page = '1', limit = '10', county = '' } = req.query;
 
         const ownerName = typeof name === "string" ? name.toLowerCase() : '';
         const ownerCity = typeof state === "string" ? state : name ? name?.toLowerCase() : '';

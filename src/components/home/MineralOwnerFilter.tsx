@@ -52,7 +52,8 @@ const MineralSearchForm = memo(
   }: Props) => {
     const router = useRouter();
     const [form, setForm] = useState({
-      name: "",
+      fname: "",
+      lname: "",
       ml: "",
       state: "",
     });
@@ -69,7 +70,15 @@ const MineralSearchForm = memo(
       (e: any) => {
         e.preventDefault();
         if (onSubmit) onSubmit();
-        else router.push({ pathname: "/owners", query: form });
+        else
+          router.push({
+            pathname: "/owners",
+            query: {
+              name: form.fname?.trim() + form?.lname?.trim(),
+              ml: form.ml,
+              state: form.state,
+            },
+          });
       },
       [form]
     );
@@ -105,16 +114,20 @@ const MineralSearchForm = memo(
             <TextField.Root
               size={"3"}
               className="w-full"
-              placeholder="First Name/MI"
-              name="name"
-              id="name"
-              value={form.name}
+              name="lname"
+              id="lname"
+              value={form.lname}
               onChange={handleOnChange}
+              placeholder="Last Name/Company"
             />
             <TextField.Root
               size={"3"}
               className="w-full"
-              placeholder="Last Name/Company"
+              placeholder="First Name/MI"
+              name="fname"
+              id="fname"
+              value={form.fname}
+              onChange={handleOnChange}
             />
             <Flex className={`${dropDownClasses}`}>
               <DropdownMenu.Root>
