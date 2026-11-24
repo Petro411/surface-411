@@ -266,7 +266,7 @@ const MineralsTable = memo(({ state, county }: MineralsTableProps) => {
           align={"center"}
           justify={"between"}
         >
-          <h2 className="text-lg font-semibold mb-2">Mineral Owners</h2>
+          <h2 className="text-lg font-semibold mb-2">Surface Owners</h2>
           <Flex
             direction={"row"}
             align={"center"}
