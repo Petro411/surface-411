@@ -222,12 +222,12 @@ const OwnerDetails = ({ id, setSelectedId }: Props) => {
               </FieldBlock>
 
               {/* Mineral Owner Address */}
-              <FieldBlock label="Mineral Owner Address">
+              <FieldBlock label="Surface Owner Address">
                 <MineralOwnerAddress owner={owner} />
               </FieldBlock>
 
               {/* Mineral Address */}
-              <FieldBlock label="Mineral Address">
+              <FieldBlock label="Surface Address">
                 <MineralAddress owner={owner} />
               </FieldBlock>
 
